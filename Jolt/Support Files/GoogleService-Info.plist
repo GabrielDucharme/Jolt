@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>177543315775-42nnrjpid6ptkclfmp2pi302ac0tpq9e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.177543315775-42nnrjpid6ptkclfmp2pi302ac0tpq9e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBFCg7_CfY8QXgprgi99UtnsrQWpTnou-g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>177543315775</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.Jolt</string>
+	<key>PROJECT_ID</key>
+	<string>jolt-25e19</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jolt-25e19.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:177543315775:ios:f80c2e299de2fbc1</string>
+	<key>DATABASE_URL</key>
+	<string>https://jolt-25e19.firebaseio.com</string>
+</dict>
+</plist>
