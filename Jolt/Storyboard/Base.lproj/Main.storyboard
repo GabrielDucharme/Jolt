@@ -616,61 +616,24 @@
                                     <action selector="logoutButton:" destination="RVe-qX-063" eventType="touchUpInside" id="HVz-V0-9iy"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyT-mn-VKe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qct-fX-fsf">
-                                        <rect key="frame" x="137.5" y="20" width="100" height="150"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70v-62-eZq" customClass="ProfileImageView" customModule="Jolt" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gab_profile" translatesAutoresizingMaskIntoConstraints="NO" id="o7C-v8-zyG" userLabel="Profile Image">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="4PE-ls-VrK"/>
-                                                    <constraint firstAttribute="width" constant="100" id="FjY-DE-cQe"/>
-                                                    <constraint firstItem="o7C-v8-zyG" firstAttribute="leading" secondItem="70v-62-eZq" secondAttribute="leading" id="NDe-wp-Vtc"/>
-                                                    <constraint firstAttribute="bottom" secondItem="o7C-v8-zyG" secondAttribute="bottom" id="iD1-mD-lAo"/>
-                                                    <constraint firstAttribute="trailing" secondItem="o7C-v8-zyG" secondAttribute="trailing" id="lGd-EL-3nm"/>
-                                                    <constraint firstItem="o7C-v8-zyG" firstAttribute="top" secondItem="70v-62-eZq" secondAttribute="top" id="oor-o1-9Af"/>
-                                                    <constraint firstAttribute="bottom" secondItem="o7C-v8-zyG" secondAttribute="bottom" id="t4r-Pc-1Mu"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gabriel Ducharme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SIh-Uq-uVv">
-                                                <rect key="frame" x="0.0" y="84" width="100" height="66"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gab_profile" translatesAutoresizingMaskIntoConstraints="NO" id="GGM-TO-4Id">
+                                <rect key="frame" x="112" y="43" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstItem="qct-fX-fsf" firstAttribute="centerY" secondItem="4vw-Ud-qF2" secondAttribute="centerY" id="Wnb-DV-40Q"/>
-                                    <constraint firstItem="qct-fX-fsf" firstAttribute="centerX" secondItem="4vw-Ud-qF2" secondAttribute="centerX" id="elZ-Iq-VJc"/>
-                                    <constraint firstItem="qct-fX-fsf" firstAttribute="top" secondItem="pyT-mn-VKe" secondAttribute="top" constant="20" id="gVg-jV-sUR"/>
-                                    <constraint firstAttribute="height" constant="170" id="vzh-cS-frP"/>
+                                    <constraint firstAttribute="height" constant="150" id="5QK-kb-Ab4"/>
+                                    <constraint firstAttribute="width" constant="150" id="Owo-FT-en5"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="4vw-Ud-qF2"/>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pyT-mn-VKe" firstAttribute="top" secondItem="3DI-3L-imW" secondAttribute="top" id="9nf-yN-tgz"/>
-                            <constraint firstItem="pyT-mn-VKe" firstAttribute="trailing" secondItem="3l3-bu-sTE" secondAttribute="trailing" id="MuR-gM-7ap"/>
-                            <constraint firstItem="pyT-mn-VKe" firstAttribute="leading" secondItem="3l3-bu-sTE" secondAttribute="leading" id="aLD-5S-ElD"/>
+                            <constraint firstItem="GGM-TO-4Id" firstAttribute="centerX" secondItem="3l3-bu-sTE" secondAttribute="centerX" id="ixY-re-25j"/>
+                            <constraint firstItem="GGM-TO-4Id" firstAttribute="top" secondItem="3l3-bu-sTE" secondAttribute="top" constant="23" id="uYN-fp-Or4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3l3-bu-sTE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="zuf-zX-bZO"/>
                     <connections>
-                        <outlet property="profileImageView" destination="70v-62-eZq" id="ztC-4E-5ZM"/>
-                        <outlet property="userNameLabel" destination="SIh-Uq-uVv" id="zuM-sT-jCJ"/>
+                        <outlet property="profileImage" destination="GGM-TO-4Id" id="kW0-03-JAI"/>
                         <segue destination="w84-IK-iwK" kind="show" identifier="logoutSegue" id="aFE-wK-oQc"/>
                     </connections>
                 </viewController>
@@ -702,7 +665,7 @@
         <scene sceneID="lF5-hb-tSY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kws-DJ-7Tq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Habit" id="y0p-Ku-TVT"/>
+                    <tabBarItem key="tabBarItem" title="Habit" image="Habit" id="y0p-Ku-TVT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eWL-Wt-qa4">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -728,7 +691,7 @@
         <scene sceneID="Cno-zE-eSn">
             <objects>
                 <navigationController title="Jolts" automaticallyAdjustsScrollViewInsets="NO" id="yNV-hP-J0L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="iWD-bb-fUe"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="Dash" id="iWD-bb-fUe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="DyD-pz-AHh">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -822,6 +785,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Dash" width="25" height="25"/>
+        <image name="Habit" width="25" height="25"/>
         <image name="Play_2" width="70" height="70"/>
         <image name="gab_profile" width="1066" height="1066"/>
         <image name="profile" width="23" height="25"/>
