@@ -19,14 +19,21 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // Outlets:
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setupProfileImage()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         db = Firestore.firestore()
-        setupProfileImage()
         
         profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        
+        userNameLabel.text = Auth.auth().currentUser?.displayName!
         
         //userNameLabel.text = "\((Auth.auth().currentUser?.displayName)!)"
         //profileImageView.clipsToBounds = true
@@ -52,28 +59,42 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         
         if let selectedImage = selectedImageFromPicker {
-            profileImage.image = selectedImage
+            
+            for subview in profileImage.subviews {
+                if let item = subview as? UIImageView {
+                    if item.image != nil {
+                        item.image = selectedImage
+                        print("Changing image")
+                    }
+                }
+            }
         }
         
         self.dismiss(animated: true) {
-            let storageRef = Storage.storage().reference().child("profileImage.png")
+            let storageRef = Storage.storage().reference().child("User Profile Picture").child("\(self.uid!)").child("profileImage.png")
             
-            if let uploadData = UIImagePNGRepresentation(self.profileImage.image!) {
-                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
-                    if let error = error {
-                        print(error.localizedDescription)
+            for subview in self.profileImage.subviews {
+                if let item = subview as? UIImageView {
+                    
+                    if item.image != nil {
+                        if let uploadData = UIImagePNGRepresentation(item.image!) {
+                            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                                if let error = error {
+                                    print(error.localizedDescription)
+                                }
+                                self.updateUserProfilePictureWith(url: (metadata?.downloadURLs)!)
+                            })
+                        }
                     }
                     
-                    self.updateUserProfilePictureWith(url: (metadata?.downloadURLs)!)
-                })
+                    
+                }
             }
-            
         }
     }
     
     private func updateUserProfilePictureWith(url: [URL]) {
         
-        print("do something here")
         let documentReference = db.document("users/\(uid!)")
         documentReference.setData(["userProvidedPicture" : "\(url[0])"], options: SetOptions.merge())
         
@@ -81,9 +102,71 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func setupProfileImage() {
-        profileImage.layer.borderWidth = 1
-        profileImage.layer.cornerRadius = profileImage.frame.height / 2
-        profileImage.clipsToBounds = true
+        
+        profileImage.clipsToBounds = false
+        profileImage.backgroundColor = UIColor.clear
+        profileImage.layer.shadowColor = UIColor.black.cgColor
+        profileImage.layer.shadowOpacity = 0.3
+        profileImage.layer.shadowOffset = CGSize.zero
+        profileImage.layer.shadowRadius = 7
+        profileImage.layer.shadowPath = UIBezierPath(roundedRect: profileImage.bounds, cornerRadius: profileImage.frame.height / 2).cgPath
+        
+        let myImage = UIImageView(frame: profileImage.bounds)
+        myImage.clipsToBounds = true
+        myImage.backgroundColor = UIColor.blue
+        myImage.layer.cornerRadius = myImage.frame.height / 2
+        
+        profileImage.addSubview(myImage)
+        
+        let documentReference = db.document("users/\(uid!)")
+        documentReference.getDocument { (snapshot, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            if let data = snapshot?.data() {
+                
+                print("Testing Data")
+                
+                if let url = data["userProvidedPicture"] {
+                    
+                    print("Testing URL")
+                    
+                    let userProvidedUrl: URL? = URL(string: "\(url)")
+                    
+                    URLSession.shared.dataTask(with: userProvidedUrl!) { (data, response, error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            print("Changing image on the queue")
+                            myImage.image = UIImage(data: data!)
+                        }
+                        
+                        }.resume()
+                } else {
+                    print ("Put the stuff here")
+                    
+                    let profileImageUrl = URL(string: "\(snapshot!.data()!["PhotoUrl"]!)")
+                    
+                    URLSession.shared.dataTask(with: profileImageUrl!) { (data, response, error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            print("Changing image on the queue")
+                            myImage.image = UIImage(data: data!)
+                        }
+                        
+                        }.resume()
+                }
+                
+            }
+            
+        }
+        
     }
 
     

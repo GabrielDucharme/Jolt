@@ -38,7 +38,7 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate {
                     self.docRef = Firestore.firestore().document("users/\(uid)")
                     
                     let dataToSave : [String: Any] = ["name": "\(name!)", "Email": "\(email!)", "PhotoUrl": "\(photoUrl!)"]
-                    self.docRef.setData(dataToSave) { (error) in
+                    self.docRef.setData(dataToSave, options: SetOptions.merge()) { (error) in
                         if let error = error {
                             print("Oh no! Some error \(error.localizedDescription)")
                         } else {

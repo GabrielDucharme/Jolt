@@ -606,40 +606,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVY-yL-x6C">
-                                <rect key="frame" x="16" y="588" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="LOGOUT"/>
-                                <connections>
-                                    <action selector="Logout:" destination="eEL-1D-li5" eventType="touchUpInside" id="1HS-DH-mrY"/>
-                                    <action selector="Logout:" destination="Kmq-aF-NfU" eventType="touchUpInside" id="ZwW-lq-c4n"/>
-                                    <action selector="logoutButton:" destination="RVe-qX-063" eventType="touchUpInside" id="HVz-V0-9iy"/>
-                                </connections>
-                            </button>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gab_profile" translatesAutoresizingMaskIntoConstraints="NO" id="GGM-TO-4Id">
-                                <rect key="frame" x="112" y="43" width="150" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2V-f3-BTW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0lB-Xm-xDb">
+                                        <rect key="frame" x="137" y="30" width="100" height="132.5"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GGM-TO-4Id">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.91498154399999998" green="0.3783349097" blue="0.73496383430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="bNo-p0-PZK"/>
+                                                    <constraint firstAttribute="width" constant="100" id="gaj-p3-9kW"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2A-FR-QQR">
+                                                <rect key="frame" x="29" y="112" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="5QK-kb-Ab4"/>
-                                    <constraint firstAttribute="width" constant="150" id="Owo-FT-en5"/>
+                                    <constraint firstAttribute="height" constant="175" id="2fv-ic-IYZ"/>
+                                    <constraint firstItem="0lB-Xm-xDb" firstAttribute="centerX" secondItem="T2V-f3-BTW" secondAttribute="centerX" id="Okv-BC-OvZ"/>
+                                    <constraint firstItem="0lB-Xm-xDb" firstAttribute="top" secondItem="T2V-f3-BTW" secondAttribute="top" constant="30" id="Vbv-Dt-uCm"/>
                                 </constraints>
-                            </imageView>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9JT-Jj-d4K">
+                                <rect key="frame" x="0.0" y="567" width="375" height="51"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVY-yL-x6C">
+                                        <rect key="frame" x="156" y="10" width="62" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ZJP-L4-TeD"/>
+                                        </constraints>
+                                        <state key="normal" title="LOGOUT"/>
+                                        <connections>
+                                            <action selector="Logout:" destination="eEL-1D-li5" eventType="touchUpInside" id="1HS-DH-mrY"/>
+                                            <action selector="Logout:" destination="Kmq-aF-NfU" eventType="touchUpInside" id="ZwW-lq-c4n"/>
+                                            <action selector="logoutButton:" destination="RVe-qX-063" eventType="touchUpInside" id="HVz-V0-9iy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZVY-yL-x6C" firstAttribute="centerX" secondItem="9JT-Jj-d4K" secondAttribute="centerX" id="QNg-W6-kmi"/>
+                                    <constraint firstItem="ZVY-yL-x6C" firstAttribute="top" secondItem="9JT-Jj-d4K" secondAttribute="top" constant="10" id="gMf-oW-feZ"/>
+                                    <constraint firstItem="ZVY-yL-x6C" firstAttribute="centerY" secondItem="9JT-Jj-d4K" secondAttribute="centerY" id="rah-QP-jMw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GGM-TO-4Id" firstAttribute="centerX" secondItem="3l3-bu-sTE" secondAttribute="centerX" id="ixY-re-25j"/>
-                            <constraint firstItem="GGM-TO-4Id" firstAttribute="top" secondItem="3l3-bu-sTE" secondAttribute="top" constant="23" id="uYN-fp-Or4"/>
+                            <constraint firstItem="9JT-Jj-d4K" firstAttribute="bottom" secondItem="3l3-bu-sTE" secondAttribute="bottom" id="7fX-mP-IeW"/>
+                            <constraint firstItem="9JT-Jj-d4K" firstAttribute="trailing" secondItem="T2V-f3-BTW" secondAttribute="trailing" id="RF1-Bm-8eW"/>
+                            <constraint firstItem="9JT-Jj-d4K" firstAttribute="leading" secondItem="T2V-f3-BTW" secondAttribute="leading" id="RHj-hE-P4s"/>
+                            <constraint firstItem="T2V-f3-BTW" firstAttribute="trailing" secondItem="3l3-bu-sTE" secondAttribute="trailing" id="S0v-qa-uu3"/>
+                            <constraint firstItem="T2V-f3-BTW" firstAttribute="top" secondItem="3DI-3L-imW" secondAttribute="top" id="nsO-Oa-9sO"/>
+                            <constraint firstItem="T2V-f3-BTW" firstAttribute="leading" secondItem="3l3-bu-sTE" secondAttribute="leading" id="xqW-Lm-ND9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3l3-bu-sTE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="zuf-zX-bZO"/>
                     <connections>
                         <outlet property="profileImage" destination="GGM-TO-4Id" id="kW0-03-JAI"/>
+                        <outlet property="userNameLabel" destination="m2A-FR-QQR" id="DVk-eA-yb3"/>
                         <segue destination="w84-IK-iwK" kind="show" identifier="logoutSegue" id="aFE-wK-oQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2c7-Yo-01T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="897"/>
+            <point key="canvasLocation" x="556" y="896.40179910044981"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eng-mP-fbz">
@@ -788,7 +829,6 @@
         <image name="Dash" width="25" height="25"/>
         <image name="Habit" width="25" height="25"/>
         <image name="Play_2" width="70" height="70"/>
-        <image name="gab_profile" width="1066" height="1066"/>
         <image name="profile" width="23" height="25"/>
     </resources>
 </document>
