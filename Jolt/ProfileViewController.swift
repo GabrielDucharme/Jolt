@@ -77,7 +77,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 if let item = subview as? UIImageView {
                     
                     if item.image != nil {
-                        if let uploadData = UIImagePNGRepresentation(item.image!) {
+                        if let uploadData = UIImageJPEGRepresentation(item.image!, 0.1) {
                             storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                                 if let error = error {
                                     print(error.localizedDescription)
@@ -126,8 +126,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             if let data = snapshot?.data() {
                 
-                print("Testing Data")
-                
                 if let url = data["userProvidedPicture"] {
                     
                     print("Testing URL")
@@ -146,7 +144,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                         
                         }.resume()
                 } else {
-                    print ("Put the stuff here")
                     
                     let profileImageUrl = URL(string: "\(snapshot!.data()!["PhotoUrl"]!)")
                     

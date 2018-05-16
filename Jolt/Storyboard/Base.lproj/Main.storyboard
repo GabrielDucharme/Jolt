@@ -249,7 +249,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19215686274509802" green="0.50980392156862742" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="RmO-4v-Hcn" firstAttribute="top" secondItem="nJP-MW-7It" secondAttribute="top" constant="8" id="WSM-hm-v0f"/>
                                     <constraint firstItem="RmO-4v-Hcn" firstAttribute="leading" secondItem="nJP-MW-7It" secondAttribute="leadingMargin" id="cfq-jc-iIu"/>
@@ -277,13 +277,13 @@
                                                     <constraint firstAttribute="height" constant="50" id="aqw-6u-9SC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <state key="normal" image="Play_2"/>
+                                                <state key="normal" image="Play"/>
                                                 <connections>
                                                     <action selector="playPauseButtonTapped:" destination="eEL-1D-li5" eventType="touchUpInside" id="81B-G4-PYC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                         </accessibility>
@@ -298,13 +298,13 @@
                                                 <color key="value" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="0.15568814212328766" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="diskColor">
-                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.2392156869" green="0.67450982329999998" blue="0.96862745289999996" alpha="0.092385488013698627" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="2"/>
+                                                <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
-                                                <color key="value" red="0.17077735066413879" green="0.30895513296127319" blue="0.37797331809997559" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.1334631741" green="0.1823148429" blue="0.25190103050000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="thumbRadius">
                                                 <real key="value" value="5"/>
@@ -313,13 +313,19 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="backtrackLineWidth">
-                                                <real key="value" value="0.0"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="point" keyPath="trackShadowOffset">
-                                                <point key="value" x="2" y="2"/>
+                                                <point key="value" x="2" y="10"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="endThumbTintColor">
                                                 <color key="value" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="trackShadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -332,7 +338,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="8NR-CT-ZBb"/>
                                                     <constraint firstAttribute="width" constant="45" id="xmi-cm-wdh"/>
                                                 </constraints>
-                                                <state key="normal" image="Play_2"/>
+                                                <state key="normal" image="Jolt"/>
                                                 <connections>
                                                     <segue destination="tw6-J8-SJE" kind="show" identifier="newJoltSegue" id="him-u0-GDo"/>
                                                 </connections>
@@ -404,7 +410,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoB-RC-fxq">
-                                <rect key="frame" x="170" y="617" width="34" height="30"/>
+                                <rect key="frame" x="170.5" y="617" width="34" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -413,18 +419,19 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="evC-Xb-AWE">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="16" y="85" width="343" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="0.10132170376712329" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="evC-Xb-AWE" firstAttribute="top" secondItem="uod-6y-NTD" secondAttribute="top" constant="249" id="2w3-cf-dkN"/>
+                            <constraint firstItem="evC-Xb-AWE" firstAttribute="top" secondItem="uod-6y-NTD" secondAttribute="top" constant="65" id="2w3-cf-dkN"/>
                             <constraint firstItem="evC-Xb-AWE" firstAttribute="centerX" secondItem="efz-6b-Rkf" secondAttribute="centerX" id="Bay-Ig-utk"/>
                             <constraint firstItem="1t9-xy-fdj" firstAttribute="leading" secondItem="uod-6y-NTD" secondAttribute="leading" constant="22" id="USY-i2-YhN"/>
-                            <constraint firstItem="evC-Xb-AWE" firstAttribute="leading" secondItem="uod-6y-NTD" secondAttribute="leading" constant="67" id="ZJe-32-Gkn"/>
+                            <constraint firstItem="evC-Xb-AWE" firstAttribute="leading" secondItem="uod-6y-NTD" secondAttribute="leading" constant="16" id="ZJe-32-Gkn"/>
                             <constraint firstItem="evC-Xb-AWE" firstAttribute="centerX" secondItem="BoB-RC-fxq" secondAttribute="centerX" id="ek4-H9-sWa"/>
                             <constraint firstItem="evC-Xb-AWE" firstAttribute="centerY" secondItem="efz-6b-Rkf" secondAttribute="centerY" id="fiz-n4-gdt"/>
                             <constraint firstAttribute="bottom" secondItem="BoB-RC-fxq" secondAttribute="bottom" constant="20" symbolic="YES" id="tAc-pd-hIP"/>
@@ -438,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwv-Tt-M9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3692" y="2465"/>
+            <point key="canvasLocation" x="3692" y="2464.3178410794603"/>
         </scene>
         <!--Active Habits-->
         <scene sceneID="q2h-0Z-LVt">
@@ -828,7 +835,8 @@
     <resources>
         <image name="Dash" width="25" height="25"/>
         <image name="Habit" width="25" height="25"/>
-        <image name="Play_2" width="70" height="70"/>
+        <image name="Jolt" width="50" height="50"/>
+        <image name="Play" width="50" height="50"/>
         <image name="profile" width="23" height="25"/>
     </resources>
 </document>
