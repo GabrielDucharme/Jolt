@@ -27,17 +27,46 @@ class HabitCreationViewController: UIViewController {
     
     @IBAction func createNewHabitButton(_ sender: UIButton) {
         if newHabitNameTextField.text != "" {
-            let newHabit = Habit(name: "\(newHabitNameTextField.text!)", sessionLength: Int(sessionTimeStepper.value), createdOn: Date(), sessionCount: 0, totalTimeLogged: 0, joltCount: 0, archived: false)
             
-            var ref:DocumentReference? = nil
-            ref = self.db.document("users/\(userID)").collection("Habits").addDocument(data: newHabit.dictionary) {
-                error in
-                
-                if let error = error {
-                    print("Erro adding document: \(error.localizedDescription)")
+            
+            //Check if habit name already exist
+            
+            db.document("users/\(userID)").collection("Habits").getDocuments { (snap, err) in
+                if let error = err {
+                    print(error.localizedDescription)
                 } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                    self.navigationController?.popViewController(animated: true)
+                    
+                    var habitNameIsAvailable = true
+                    
+                    for document in snap!.documents {
+                        if self.newHabitNameTextField.text == document.data()["Name"] as? String {
+                            print("There is already an habit with this name")
+                            habitNameIsAvailable = false
+                        }
+                    }
+                    
+                    if habitNameIsAvailable {
+                        
+                        let newHabit = Habit(name: "\(self.newHabitNameTextField.text!)", sessionLength: Int(self.sessionTimeStepper.value), createdOn: Date(), sessionCount: 0, totalTimeLogged: 0, joltCount: 0, archived: false)
+                        
+                        var ref:DocumentReference? = nil
+                        ref = self.db.document("users/\(self.userID)").collection("Habits").addDocument(data: newHabit.dictionary) {
+                            error in
+                            
+                            if let error = error {
+                                print("Erro adding document: \(error.localizedDescription)")
+                            } else {
+                                print("Document added with ID: \(ref!.documentID)")
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        }
+                    } else {
+                        let alertController = UIAlertController(title: "Oops!", message: "An habit with this name already exists!", preferredStyle: .actionSheet)
+                        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (alert: UIAlertAction!) in
+                        })
+                        alertController.addAction(okAction)
+                        self.present(alertController, animated: true)
+                    }
                 }
             }
             
@@ -67,17 +96,7 @@ class HabitCreationViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

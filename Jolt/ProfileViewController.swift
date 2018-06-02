@@ -97,8 +97,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         let documentReference = db.document("users/\(uid!)")
         documentReference.setData(["userProvidedPicture" : "\(url[0])"], options: SetOptions.merge())
-        
-        
     }
     
     func setupProfileImage() {

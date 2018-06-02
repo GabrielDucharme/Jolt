@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 
-class HabitIJoltsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HabitIJoltsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
 
     @IBOutlet weak var HabitNameLabel: UILabel!
@@ -30,7 +30,13 @@ class HabitIJoltsViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         print("HabitNAme \(habitName)")
+        
+        joltTableView.emptyDataSetSource = self
+        joltTableView.emptyDataSetDelegate = self
+        joltTableView.tableFooterView = UIView()
     }
+    
+    
 
 }
 
@@ -49,6 +55,20 @@ extension HabitIJoltsViewController {
         cell.joltCreatedOnLabel.text = "Created on: \(stringFromDate(model[indexPath.row].createdOn))"
         
         return cell
+    }
+    
+    // DZN Function (no data in table view)
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "You have not logged a jolt yet!"
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Tap the jolt button to add your first jolt."
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        return NSAttributedString(string: str, attributes: attrs)
     }
     
     //FireStore Data

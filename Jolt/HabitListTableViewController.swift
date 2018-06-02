@@ -27,8 +27,6 @@ class HabitListTableViewController: UITableViewController, DZNEmptyDataSetSource
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         
-        
-
     }
 
     // MARK: - Table view data source
@@ -120,7 +118,6 @@ class HabitListTableViewController: UITableViewController, DZNEmptyDataSetSource
         closeAction.backgroundColor = .purple
         
         return UISwipeActionsConfiguration(actions: [closeAction])
-        
     }
     */
     
@@ -137,7 +134,7 @@ class HabitListTableViewController: UITableViewController, DZNEmptyDataSetSource
         let destination = segue.destination as? TimerViewController,
         let habitIndex = tableView.indexPathForSelectedRow?.row {
             destination.habitName = habitListArray[habitIndex].name
-            //destination.sessionLength = habitArray[habitIndex].sessionLength
+            destination.sessionLength = habitListArray[habitIndex].sessionLength
             destination.totalLoggedTime = habitListArray[habitIndex].totalTimeLogged
             destination.joltsCount = habitListArray[habitIndex].joltCount
             destination.sessionCount = habitListArray[habitIndex].sessionCount

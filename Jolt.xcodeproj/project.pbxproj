@@ -19,6 +19,7 @@
 		024E1CEF2027E3B600858184 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 024E1CEE2027E3B600858184 /* GoogleService-Info.plist */; };
 		026818B42027ED1100FFB2A6 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026818B32027ED1100FFB2A6 /* UserLoginViewController.swift */; };
 		026EBE8B20A680750027123E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026EBE8A20A680740027123E /* Assets.xcassets */; };
+		0280963B20B87BA5004F0BA8 /* EditSessionTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0280963A20B87BA5004F0BA8 /* EditSessionTimeViewController.swift */; };
 		028C5A57209528FD00EFFBFD /* HabitIJoltsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C5A56209528FD00EFFBFD /* HabitIJoltsViewController.swift */; };
 		029D41CC2029353300CE5480 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D41CB2029353300CE5480 /* TimerViewController.swift */; };
 		029D41D02029469700CE5480 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D41CF2029469600CE5480 /* AuthVC.swift */; };
@@ -27,7 +28,7 @@
 		02B9C647202BCCBF004459DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9C646202BCCBF004459DC /* ProfileViewController.swift */; };
 		02C33E0B2099031C001464F6 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C33E092099031B001464F6 /* UIScrollView+EmptyDataSet.m */; };
 		02DF93702066C42600572A26 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF936F2066C42600572A26 /* HabitTableViewCell.swift */; };
-		02EAA6192031165900BF0775 /* JoltSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA6182031165900BF0775 /* JoltSession.swift */; };
+		02EAA6192031165900BF0775 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA6182031165900BF0775 /* Session.swift */; };
 		02EAA61B20327CC100BF0775 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA61A20327CC100BF0775 /* Habit.swift */; };
 		02EAA61D2032805A00BF0775 /* Jolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA61C2032805A00BF0775 /* Jolt.swift */; };
 		07F5DF3254A5D21BEE420879 /* Pods_Jolt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D1E41A85C2DF71EB1A0EBB /* Pods_Jolt.framework */; };
@@ -48,6 +49,7 @@
 		024E1CEE2027E3B600858184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		026818B32027ED1100FFB2A6 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserLoginViewController.swift; path = /Users/Gab/Desktop/CODING/JOLT_NOV17/Jolt/Jolt/UserLoginViewController.swift; sourceTree = "<absolute>"; };
 		026EBE8A20A680740027123E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0280963A20B87BA5004F0BA8 /* EditSessionTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSessionTimeViewController.swift; sourceTree = "<group>"; };
 		028C5A56209528FD00EFFBFD /* HabitIJoltsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitIJoltsViewController.swift; sourceTree = "<group>"; };
 		029D41CB2029353300CE5480 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		029D41CF2029469600CE5480 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		02C33E0A2099031C001464F6 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		02DF936F2066C42600572A26 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		02EAA614202FAC8600BF0775 /* Jolt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jolt.entitlements; sourceTree = "<group>"; };
-		02EAA6182031165900BF0775 /* JoltSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoltSession.swift; sourceTree = "<group>"; };
+		02EAA6182031165900BF0775 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		02EAA61A20327CC100BF0775 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		02EAA61C2032805A00BF0775 /* Jolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jolt.swift; sourceTree = "<group>"; };
 		83D1E41A85C2DF71EB1A0EBB /* Pods_Jolt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jolt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 				021CF53F209A167A00CE06B0 /* ArchivedHabitTableViewController.swift */,
 				0228DFEE20A4E6C1008A6BD9 /* DashboardViewController.swift */,
 				0228DFF020A4E89A008A6BD9 /* DashCollectionViewCell.swift */,
+				0280963A20B87BA5004F0BA8 /* EditSessionTimeViewController.swift */,
 				022579821FD10797001EC2CD /* Info.plist */,
 				026EBE8A20A680740027123E /* Assets.xcassets */,
 				029D41CE2029355500CE5480 /* Support Files */,
@@ -156,7 +159,7 @@
 		02EAA615202FB83F00BF0775 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				02EAA6182031165900BF0775 /* JoltSession.swift */,
+				02EAA6182031165900BF0775 /* Session.swift */,
 				02EAA61A20327CC100BF0775 /* Habit.swift */,
 				02EAA61C2032805A00BF0775 /* Jolt.swift */,
 			);
@@ -285,6 +288,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Jolt/Pods-Jolt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
@@ -303,6 +307,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
@@ -360,7 +365,7 @@
 				029D41D02029469700CE5480 /* AuthVC.swift in Sources */,
 				022579771FD10797001EC2CD /* AppDelegate.swift in Sources */,
 				0228DFF120A4E89A008A6BD9 /* DashCollectionViewCell.swift in Sources */,
-				02EAA6192031165900BF0775 /* JoltSession.swift in Sources */,
+				02EAA6192031165900BF0775 /* Session.swift in Sources */,
 				02B15397206316E000368D9E /* HabitCreationViewController.swift in Sources */,
 				023F72172084F04A0017E902 /* NewJoltViewController.swift in Sources */,
 				02B9C647202BCCBF004459DC /* ProfileViewController.swift in Sources */,
@@ -371,6 +376,7 @@
 				02EAA61B20327CC100BF0775 /* Habit.swift in Sources */,
 				0219F81F2097A3C000347E58 /* JoltTableViewCell.swift in Sources */,
 				028C5A57209528FD00EFFBFD /* HabitIJoltsViewController.swift in Sources */,
+				0280963B20B87BA5004F0BA8 /* EditSessionTimeViewController.swift in Sources */,
 				029D41CC2029353300CE5480 /* TimerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
