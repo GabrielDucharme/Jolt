@@ -87,6 +87,7 @@ class HabitCreationViewController: UIViewController {
         sessionTimeStepper.value = 15.0
         sessionTimeLabel.text = "\(Int(sessionTimeStepper.value))"
         
+        newHabitNameTextField.setBottomBorder()
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.

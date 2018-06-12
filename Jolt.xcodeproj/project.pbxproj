@@ -25,6 +25,7 @@
 		029D41D02029469700CE5480 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D41CF2029469600CE5480 /* AuthVC.swift */; };
 		02A4A0342069C250008EDAED /* StringFromDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4A0332069C250008EDAED /* StringFromDate.swift */; };
 		02B15397206316E000368D9E /* HabitCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B15396206316E000368D9E /* HabitCreationViewController.swift */; };
+		02B34AC320C33A7500DBA4FB /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B34AC220C33A7500DBA4FB /* UITextFieldExtension.swift */; };
 		02B9C647202BCCBF004459DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9C646202BCCBF004459DC /* ProfileViewController.swift */; };
 		02C33E0B2099031C001464F6 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C33E092099031B001464F6 /* UIScrollView+EmptyDataSet.m */; };
 		02DF93702066C42600572A26 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF936F2066C42600572A26 /* HabitTableViewCell.swift */; };
@@ -55,6 +56,7 @@
 		029D41CF2029469600CE5480 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		02A4A0332069C250008EDAED /* StringFromDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFromDate.swift; sourceTree = "<group>"; };
 		02B15396206316E000368D9E /* HabitCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreationViewController.swift; sourceTree = "<group>"; };
+		02B34AC220C33A7500DBA4FB /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		02B9C646202BCCBF004459DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		02C33E0820990319001464F6 /* Jolt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jolt-Bridging-Header.h"; sourceTree = "<group>"; };
 		02C33E092099031B001464F6 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				02C33E092099031B001464F6 /* UIScrollView+EmptyDataSet.m */,
 				024E1CEE2027E3B600858184 /* GoogleService-Info.plist */,
 				02C33E0820990319001464F6 /* Jolt-Bridging-Header.h */,
+				02B34AC220C33A7500DBA4FB /* UITextFieldExtension.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -213,7 +216,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Gabriel Ducharme";
 				TargetAttributes = {
 					022579721FD10797001EC2CD = {
@@ -222,6 +225,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -374,6 +380,7 @@
 				02335B59205999E2009454B8 /* HabitListTableViewController.swift in Sources */,
 				026818B42027ED1100FFB2A6 /* UserLoginViewController.swift in Sources */,
 				02EAA61B20327CC100BF0775 /* Habit.swift in Sources */,
+				02B34AC320C33A7500DBA4FB /* UITextFieldExtension.swift in Sources */,
 				0219F81F2097A3C000347E58 /* JoltTableViewCell.swift in Sources */,
 				028C5A57209528FD00EFFBFD /* HabitIJoltsViewController.swift in Sources */,
 				0280963B20B87BA5004F0BA8 /* EditSessionTimeViewController.swift in Sources */,
@@ -417,6 +424,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -424,6 +432,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -474,6 +483,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -481,6 +491,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

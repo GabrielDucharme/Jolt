@@ -29,6 +29,8 @@ class EditSessionTimeViewController: UIViewController {
         habitNameTextField.placeholder = habitName
         
         hideKeyboardWhenTappedAround()
+        
+        habitNameTextField.setBottomBorder()
 
         // Do any additional setup after loading the view.
     }
