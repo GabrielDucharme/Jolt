@@ -56,7 +56,7 @@ class HabitListTableViewController: UITableViewController, DZNEmptyDataSetSource
         return "Archive"
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             let name = habitListArray[indexPath.row].name
@@ -153,7 +153,9 @@ class HabitListTableViewController: UITableViewController, DZNEmptyDataSetSource
 
 extension HabitListTableViewController {
      
-    func loadData() {
+    @objc func loadData() {
+        print("loading data")
+        
         db.document("users/\(userID)").collection("Habits").whereField("Archived", isEqualTo: false).order(by: "Created On").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("\(error.localizedDescription)")
@@ -182,6 +184,10 @@ extension HabitListTableViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
+                    
+                    if diff.type == .modified {
+                        print("A document as been changed")
+                    }
                 }
             }
         }
@@ -189,13 +195,13 @@ extension HabitListTableViewController {
     
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "Welcome"
-        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)]
         return NSAttributedString(string: str, attributes: attrs)
     }
     
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "Tap the + button to add your first habit."
-        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)]
         return NSAttributedString(string: str, attributes: attrs)
     }
     

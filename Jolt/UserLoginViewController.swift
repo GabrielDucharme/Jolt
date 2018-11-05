@@ -11,7 +11,17 @@ import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
 
-class UserLoginViewController: UIViewController, FUIAuthDelegate {
+class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDelegate {
+    
+    let gradient = CAGradientLayer()
+    var gradientSet = [[CGColor]]()
+    var currentGradient: Int = 0
+    
+    let gradientOne = UIColor(red: 48/255, green: 62/255, blue: 103/255, alpha: 1).cgColor
+    let gradientTwo = UIColor(red: 244/255, green: 88/255, blue: 53/255, alpha: 1).cgColor
+    let gradientThree = UIColor(red: 196/255, green: 70/255, blue: 107/255, alpha: 1).cgColor
+    
+    @IBOutlet weak var loginButton: UIButton!
     
     // Setup Google Firestore Database Ref
     var docRef : DocumentReference!
@@ -21,8 +31,53 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate {
         
         // Check if user is already logged in
         isUserLogged()
+        
+        // Login Button Setup
+        loginButton.layer.cornerRadius = 7.0
 
         // Do any additional setup after loading the view.
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Gradient View Setup
+        gradientSet.append([gradientOne, gradientTwo])
+        gradientSet.append([gradientTwo, gradientThree])
+        gradientSet.append([gradientThree, gradientOne])
+        
+        
+        gradient.frame = self.view.bounds
+        gradient.colors = gradientSet[currentGradient]
+        gradient.startPoint = CGPoint(x:0, y:0)
+        gradient.endPoint = CGPoint(x:1, y:1)
+        gradient.drawsAsynchronously = true
+        self.view.layer.insertSublayer(gradient, at: 0)
+        
+        animateGradient()
+    }
+    
+    
+    @IBAction func loginClicked(_ sender: Any) {
+        
+        let authUI = FUIAuth.defaultAuthUI()
+        authUI?.delegate = self
+        
+        let googleProvider = FUIGoogleAuth()
+        let facebookProvider = FUIFacebookAuth()
+        authUI?.providers = [googleProvider, facebookProvider]
+        let authViewController = AuthVC(authUI: authUI!)
+        let navc = UINavigationController(rootViewController: authViewController)
+        self.present(navc, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
     }
     
     func isUserLogged() {
@@ -50,7 +105,7 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 // No user is signed in.
-                self.login()
+
             }
         }
     }
@@ -64,17 +119,28 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate {
         }
     }
     
-    func login() {
+    func animateGradient() {
+        if currentGradient < gradientSet.count - 1 {
+            currentGradient += 1
+        } else {
+            currentGradient = 0
+        }
         
-        let authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = self
-        
-        let googleProvider = FUIGoogleAuth()
-        let facebookProvider = FUIFacebookAuth()
-        authUI?.providers = [googleProvider, facebookProvider]
-        let authViewController = AuthVC(authUI: authUI!)
-        let navc = UINavigationController(rootViewController: authViewController)
-        self.present(navc, animated: true, completion: nil)
+        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+        gradientChangeAnimation.duration = 5.0
+        gradientChangeAnimation.toValue = gradientSet[currentGradient]
+        gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
+        gradientChangeAnimation.isRemovedOnCompletion = false
+        gradientChangeAnimation.delegate = self
+        gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
-    
+}
+
+extension UserLoginViewController {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if flag {
+            gradient.colors = gradientSet[currentGradient]
+            animateGradient()
+        }
+    }
 }

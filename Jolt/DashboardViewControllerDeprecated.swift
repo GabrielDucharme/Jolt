@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class DashboardViewControllerDeprecated: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var dashboardCollectionView: UICollectionView!
+    @IBOutlet weak var dashboardCollectionViewDeprecated: UICollectionView!
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -19,7 +19,7 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = dashboardCollectionView.dequeueReusableCell(withReuseIdentifier: "DashboardCell1", for: indexPath) as! DashCollectionViewCell
+        let cell = dashboardCollectionViewDeprecated.dequeueReusableCell(withReuseIdentifier: "DashboardCell1", for: indexPath) as! DashCollectionViewCell
         
         
         return cell
@@ -29,8 +29,8 @@ class DashboardViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dashboardCollectionView.delegate = self
-        dashboardCollectionView.dataSource = self
+        dashboardCollectionViewDeprecated.delegate = self
+        dashboardCollectionViewDeprecated.dataSource = self
 
         // Do any additional setup after loading the view.
     }
