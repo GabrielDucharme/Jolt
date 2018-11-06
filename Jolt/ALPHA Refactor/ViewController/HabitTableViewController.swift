@@ -64,6 +64,19 @@ class HabitTableViewController: UITableViewController, DZNEmptyDataSetSource, DZ
 
 extension HabitTableViewController {
     
+    // Prepare for segue into Session View
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Session Segue",
+        let destination = segue.destination as? SessionTimerViewController,
+            let habitIndex = tableView.indexPathForSelectedRow?.row {
+            destination.HabitName = habitArray[habitIndex].name
+        }
+    }
+}
+
+extension HabitTableViewController {
+    
     // Setup methods for DZNEmptyData
     func title(forEmptyDataSet _: UIScrollView) -> NSAttributedString? {
         let str = "Welcome"

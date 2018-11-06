@@ -28,6 +28,7 @@
 		028C5A57209528FD00EFFBFD /* HabitIJoltsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C5A56209528FD00EFFBFD /* HabitIJoltsViewController.swift */; };
 		029D41CC2029353300CE5480 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D41CB2029353300CE5480 /* TimerViewController.swift */; };
 		029D41D02029469700CE5480 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D41CF2029469600CE5480 /* AuthVC.swift */; };
+		02A3A41621908C2F00FF591E /* SessionTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A41521908C2F00FF591E /* SessionTimerViewController.swift */; };
 		02A4A0342069C250008EDAED /* StringFromDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4A0332069C250008EDAED /* StringFromDate.swift */; };
 		02B15397206316E000368D9E /* HabitCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B15396206316E000368D9E /* HabitCreationViewController.swift */; };
 		02B34AC320C33A7500DBA4FB /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B34AC220C33A7500DBA4FB /* UITextFieldExtension.swift */; };
@@ -64,6 +65,7 @@
 		028C5A56209528FD00EFFBFD /* HabitIJoltsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitIJoltsViewController.swift; sourceTree = "<group>"; };
 		029D41CB2029353300CE5480 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		029D41CF2029469600CE5480 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		02A3A41521908C2F00FF591E /* SessionTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTimerViewController.swift; sourceTree = "<group>"; };
 		02A4A0332069C250008EDAED /* StringFromDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFromDate.swift; sourceTree = "<group>"; };
 		02B15396206316E000368D9E /* HabitCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreationViewController.swift; sourceTree = "<group>"; };
 		02B34AC220C33A7500DBA4FB /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				02183FD0210A90F000F3404D /* HabitTableViewController.swift */,
 				026818B32027ED1100FFB2A6 /* UserLoginViewController.swift */,
 				02B15396206316E000368D9E /* HabitCreationViewController.swift */,
+				02A3A41521908C2F00FF591E /* SessionTimerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				02B15397206316E000368D9E /* HabitCreationViewController.swift in Sources */,
 				023F72172084F04A0017E902 /* NewJoltViewController.swift in Sources */,
 				02183FD1210A90F000F3404D /* HabitTableViewController.swift in Sources */,
+				02A3A41621908C2F00FF591E /* SessionTimerViewController.swift in Sources */,
 				023EE69B20F664EA008115CB /* DashboardViewController.swift in Sources */,
 				02B9C647202BCCBF004459DC /* ProfileViewController.swift in Sources */,
 				02EAA61D2032805A00BF0775 /* Jolt.swift in Sources */,
