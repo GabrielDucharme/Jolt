@@ -21,8 +21,9 @@ class HabitCreationViewController: UIViewController {
     @IBOutlet weak var sessionTimeStepper: UIStepper!
     
     
-    @IBAction func sessionTimeStepperValueChanged(_ sender: Any) {
-        sessionTimeLabel.text = "\(Int(sessionTimeStepper.value))"
+    @IBAction func sessionTimeValueChanged(_ sender: UIStepper) {
+        sessionTimeLabel.text = "\(Int(sessionTimeStepper.value).description)"
+        print("Value is now: \(sessionTimeStepper.value)")
     }
     
     @IBAction func createNewHabitButton(_ sender: UIButton) {
@@ -84,7 +85,6 @@ class HabitCreationViewController: UIViewController {
         
         db = Firestore.firestore()
         
-        sessionTimeStepper.value = 15.0
         sessionTimeLabel.text = "\(Int(sessionTimeStepper.value))"
         
         newHabitNameTextField.setBottomBorder()
@@ -92,13 +92,6 @@ class HabitCreationViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
 extension UIViewController {

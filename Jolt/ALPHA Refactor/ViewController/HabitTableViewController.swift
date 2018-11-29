@@ -70,7 +70,15 @@ extension HabitTableViewController {
         if segue.identifier == "Session Segue",
         let destination = segue.destination as? SessionTimerViewController,
             let habitIndex = tableView.indexPathForSelectedRow?.row {
-            destination.HabitName = habitArray[habitIndex].name
+            destination.habitName = habitArray[habitIndex].name
+            destination.sessionLengthInMinutes = habitArray[habitIndex].sessionLength
+        }
+        
+        if let destination = segue.destination as? JoltsTableViewController {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                destination.habitName = habitArray[indexPath.row].name
+                //destination.documentID = habitListArray[indexPath.row].
+            }
         }
     }
 }

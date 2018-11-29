@@ -7,7 +7,8 @@
 //
 
 import UIKit
+import Charts
 
 class Dash01CollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var pieChartView: PieChartView!
 }
