@@ -12,6 +12,7 @@ class HabitTableViewCell: UITableViewCell {
 
     @IBOutlet weak var habitNameLabel: UILabel!
     @IBOutlet weak var habitStartedAtLabel: UILabel!
+    @IBOutlet weak var habitTimeSpentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

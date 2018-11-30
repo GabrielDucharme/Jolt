@@ -54,8 +54,12 @@ class HabitTableViewController: UITableViewController, DZNEmptyDataSetSource, DZ
         let cell = tableView.dequeueReusableCell(withIdentifier: "habit cell", for: indexPath) as! HabitTableViewCell
         
         let habit = habitArray[indexPath.row]
-        cell.habitNameLabel.text = "\(habit.name)"
-        cell.habitStartedAtLabel.text = "Started: \(stringFromDate(habit.createdOn))"
+        cell.habitNameLabel.text = "\(habit.name.uppercased())"
+        // Put this somewhere else
+        let dateA = habit.createdOn
+        let dateB = Date()
+        let diffInDays = Calendar.current.dateComponents([.day], from: dateA, to: dateB).day;    cell.habitStartedAtLabel.text = "Started: \(diffInDays!) days ago"
+        cell.habitTimeSpentLabel.text = "Total time: \(habit.totalTimeLogged) minutes"
         
         return cell
     }
@@ -72,12 +76,14 @@ extension HabitTableViewController {
             let habitIndex = tableView.indexPathForSelectedRow?.row {
             destination.habitName = habitArray[habitIndex].name
             destination.sessionLengthInMinutes = habitArray[habitIndex].sessionLength
+            destination.joltsCount = habitArray[habitIndex].joltCount
+            destination.sessionCount = habitArray[habitIndex].sessionCount
+            destination.totalLoggedTime = habitArray[habitIndex].totalTimeLogged
         }
         
         if let destination = segue.destination as? JoltsTableViewController {
             if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
                 destination.habitName = habitArray[indexPath.row].name
-                //destination.documentID = habitListArray[indexPath.row].
             }
         }
     }

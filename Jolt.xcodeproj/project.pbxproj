@@ -23,6 +23,7 @@
 		024B058B2107DA8A002088CD /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B058A2107DA8A002088CD /* HabitViewController.swift */; };
 		024E1CEF2027E3B600858184 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 024E1CEE2027E3B600858184 /* GoogleService-Info.plist */; };
 		024E5E47219DC30F00160A20 /* JoltsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E5E46219DC30F00160A20 /* JoltsTableViewController.swift */; };
+		025DA87421B04858006A0F4B /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DA87321B04858006A0F4B /* HabitTableViewCell.swift */; };
 		026818B42027ED1100FFB2A6 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026818B32027ED1100FFB2A6 /* UserLoginViewController.swift */; };
 		026EBE8B20A680750027123E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026EBE8A20A680740027123E /* Assets.xcassets */; };
 		0275DF7521933E04004BEE21 /* SessionJoltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0275DF7421933E04004BEE21 /* SessionJoltViewController.swift */; };
@@ -38,7 +39,6 @@
 		02B34AC320C33A7500DBA4FB /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B34AC220C33A7500DBA4FB /* UITextFieldExtension.swift */; };
 		02B9C647202BCCBF004459DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9C646202BCCBF004459DC /* ProfileViewController.swift */; };
 		02C33E0B2099031C001464F6 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C33E092099031B001464F6 /* UIScrollView+EmptyDataSet.m */; };
-		02DF93702066C42600572A26 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF936F2066C42600572A26 /* HabitTableViewCell.swift */; };
 		02EAA6192031165900BF0775 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA6182031165900BF0775 /* Session.swift */; };
 		02EAA61B20327CC100BF0775 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA61A20327CC100BF0775 /* Habit.swift */; };
 		02EAA61D2032805A00BF0775 /* Jolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA61C2032805A00BF0775 /* Jolt.swift */; };
@@ -65,6 +65,7 @@
 		024B058A2107DA8A002088CD /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		024E1CEE2027E3B600858184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		024E5E46219DC30F00160A20 /* JoltsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoltsTableViewController.swift; sourceTree = "<group>"; };
+		025DA87321B04858006A0F4B /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		026818B32027ED1100FFB2A6 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserLoginViewController.swift; path = /Users/Gab/Desktop/CODING/JOLT_NOV17/Jolt/Jolt/UserLoginViewController.swift; sourceTree = "<absolute>"; };
 		026EBE8A20A680740027123E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0275DF7421933E04004BEE21 /* SessionJoltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionJoltViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		02C33E0820990319001464F6 /* Jolt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jolt-Bridging-Header.h"; sourceTree = "<group>"; };
 		02C33E092099031B001464F6 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		02C33E0A2099031C001464F6 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
-		02DF936F2066C42600572A26 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		02EAA614202FAC8600BF0775 /* Jolt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jolt.entitlements; sourceTree = "<group>"; };
 		02EAA6182031165900BF0775 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		02EAA61A20327CC100BF0775 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -150,7 +150,9 @@
 		0234FDA921AEE81F002C10D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				025DA87321B04858006A0F4B /* HabitTableViewCell.swift */,
 				0234FDAA21AEE83F002C10D2 /* DashboardHeader.swift */,
+				0219F81E2097A3C000347E58 /* JoltTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -196,9 +198,7 @@
 			children = (
 				0279E7D52101443500E8D964 /* Dash01CollectionViewCell.swift */,
 				02A032B821ADB5210095EEC3 /* Dash02CollectionViewCell.swift */,
-				02DF936F2066C42600572A26 /* HabitTableViewCell.swift */,
 				029D41CF2029469600CE5480 /* AuthVC.swift */,
-				0219F81E2097A3C000347E58 /* JoltTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,7 +442,6 @@
 				0228DFEF20A4E6C1008A6BD9 /* DashboardViewControllerDeprecated.swift in Sources */,
 				021CF540209A167A00CE06B0 /* ArchivedHabitTableViewController.swift in Sources */,
 				024A7B472107D07C00E55B8D /* DashboardCollectionViewLayout.swift in Sources */,
-				02DF93702066C42600572A26 /* HabitTableViewCell.swift in Sources */,
 				029D41D02029469700CE5480 /* AuthVC.swift in Sources */,
 				022579771FD10797001EC2CD /* AppDelegate.swift in Sources */,
 				024B058B2107DA8A002088CD /* HabitViewController.swift in Sources */,
@@ -468,6 +467,7 @@
 				0219F81F2097A3C000347E58 /* JoltTableViewCell.swift in Sources */,
 				028C5A57209528FD00EFFBFD /* HabitIJoltsViewController.swift in Sources */,
 				0280963B20B87BA5004F0BA8 /* EditSessionTimeViewController.swift in Sources */,
+				025DA87421B04858006A0F4B /* HabitTableViewCell.swift in Sources */,
 				029D41CC2029353300CE5480 /* TimerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

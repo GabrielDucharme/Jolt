@@ -19,7 +19,7 @@ class SessionJoltViewController: UIViewController {
     var habitName = String()
     var joltCount = Int()
 
-    @IBOutlet weak var joltTextView: UITextField!
+    @IBOutlet weak var joltTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

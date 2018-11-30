@@ -14,6 +14,20 @@ import UserNotifications
 
 class SessionTimerViewController: UIViewController {
     
+    // DEBUG TIME LOG
+    @IBOutlet weak var logTimeButton: UIButton!
+    
+    @IBAction func logTimePressed(_ sender: Any) {
+        
+        print("\(sessionLengthInMinutes)")
+        sessionCount += 1
+        totalLoggedTime += sessionLengthInMinutes
+        logSessionData()
+        
+    }
+    
+    
+    
     // Create Firestore Database and User ID Reference
     var db: Firestore!
     let userID = Auth.auth().currentUser!.uid
@@ -49,6 +63,11 @@ class SessionTimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("habit name: \(habitName)")
+        print("total time logged: \(totalLoggedTime)")
+        print("total jolt count: \(joltsCount)")
+        print("total session count: \(sessionCount)")
         
         db = Firestore.firestore()
         
@@ -112,10 +131,9 @@ class SessionTimerViewController: UIViewController {
     }
     
     func addSessionToFirebase() {
-        totalLoggedTime += sessionLengthInMinutes
-        print("old session count: \(sessionCount)")
+        
         sessionCount += 1
-        print("New session count: \(sessionCount)")
+        totalLoggedTime += sessionLengthInMinutes
         
         timer.invalidate()
         reinitiateTimer()
@@ -306,7 +324,7 @@ extension SessionTimerViewController {
     
     @objc func willEnterForeground(noti: Notification) {
         
-        if !timerIsPaused {
+        if timerIsRunning {
             if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
                 (diffHrs, diffMins, diffSecs) = TimerViewController.getTimeDifference(startDate: savedDate)
             }
