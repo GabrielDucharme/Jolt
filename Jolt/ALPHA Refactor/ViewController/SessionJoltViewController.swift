@@ -10,17 +10,21 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 
-class SessionJoltViewController: UIViewController {
+class SessionJoltViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Create Firestore Database and User ID Reference
     var db: Firestore!
+    let currentUser = Auth.auth().currentUser
     let userID = Auth.auth().currentUser!.uid
     
     var habitName = String()
     var joltCount = Int()
+    
+    lazy var storage = Storage.storage()
 
     @IBOutlet weak var joltTextView: UITextView!
-
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +34,8 @@ class SessionJoltViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
+    // IBA ACTIONS:
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -37,6 +43,62 @@ class SessionJoltViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         joltCount += 1
         logNewJolt()
+    }
+    
+    @IBAction func joltMediaPressed(_ sender: Any) {
+        // Open picture selector
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            vc.sourceType = .camera
+        } else {
+            vc.sourceType = .photoLibrary
+        }
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let joltImage = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        
+        let optimizedImage = joltImage.jpegData(compressionQuality: 30)
+        uploadJoltImage(imageData: optimizedImage!)
+    }
+    
+    func uploadJoltImage(imageData: Data) {
+        let activityIndicator = UIActivityIndicatorView.init(style: .gray)
+        activityIndicator.startAnimating()
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        
+        let storageReference = storage.reference()
+        
+        let profileImageRef = storageReference.child("users").child(currentUser!.uid).child("\(currentUser!.uid)-newJoltImage.jpg")
+        
+        let uploadMetaData = StorageMetadata()
+        uploadMetaData.contentType = "image/jpeg"
+        
+        profileImageRef.putData(imageData, metadata: uploadMetaData) { (uploadedImageMeta, error) in
+            
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+            
+            if error != nil
+            {
+                print("Error took place \(String(describing: error?.localizedDescription))")
+                return
+            } else {
+                
+                self.imageView.image = UIImage(data: imageData)
+                
+                print("Meta data of uploaded image \(String(describing: uploadedImageMeta))")
+            }
+        }
     }
     
     func logNewJolt() {

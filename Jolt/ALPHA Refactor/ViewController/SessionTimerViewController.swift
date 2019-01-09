@@ -18,15 +18,8 @@ class SessionTimerViewController: UIViewController {
     @IBOutlet weak var logTimeButton: UIButton!
     
     @IBAction func logTimePressed(_ sender: Any) {
-        
-        print("\(sessionLengthInMinutes)")
-        sessionCount += 1
-        totalLoggedTime += sessionLengthInMinutes
-        logSessionData()
-        
+        addSessionToFirebase()
     }
-    
-    
     
     // Create Firestore Database and User ID Reference
     var db: Firestore!
@@ -63,11 +56,6 @@ class SessionTimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("habit name: \(habitName)")
-        print("total time logged: \(totalLoggedTime)")
-        print("total jolt count: \(joltsCount)")
-        print("total session count: \(sessionCount)")
         
         db = Firestore.firestore()
         
@@ -135,9 +123,10 @@ class SessionTimerViewController: UIViewController {
         sessionCount += 1
         totalLoggedTime += sessionLengthInMinutes
         
-        timer.invalidate()
-        reinitiateTimer()
         logSessionData()
+        
+        self.reinitiateTimer()
+        self.setupTimer()
     }
     
     func cancelCurrentIntervalAlert() {
@@ -240,7 +229,7 @@ extension SessionTimerViewController {
                 print(error.localizedDescription)
             } else {
                 for document in snapshot!.documents {
-                    
+
                     self.db.document("users/\(self.userID)").collection("Habits").document("\(document.documentID)").updateData([
                         "Total Time Logged" : (self.totalLoggedTime),
                         "Session Count" : (self.sessionCount)
@@ -248,8 +237,9 @@ extension SessionTimerViewController {
                         if let err = err {
                             print("Error updating document: \(err)")
                         } else {
-                            print("Document successfully updated")
-                            //self.fetchLastSevenDaysSessionTime(for: Date())
+                            print("Document successfully updated for \(name)")
+                            print("Total Logged Time data: \(self.totalLoggedTime)")
+                            print("Session count data: \(self.sessionCount)")
                         }
                     }
                     
@@ -343,13 +333,13 @@ extension SessionTimerViewController {
         currentSessionTime -= (minsInSecs + secs)
         
         if currentSessionTime < 1 {
-            print("Timer finished while app closed")
-            reinitiateTimer()
-            setupTimer()
-            logSessionData()
+            
+            self.addSessionToFirebase()
             
             let alertController = UIAlertController(title: "Session finished!", message: "Your session ended while you were away", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            let okButton = UIAlertAction(title: "Perfect!", style: .default) { (UIAlertAction) in
+                print("Ok button was pressed")
+            }
             alertController.addAction(okButton)
             self.present(alertController, animated: true)
             
@@ -371,6 +361,8 @@ extension SessionTimerViewController {
     func scheduleLocal() {
         
         print("Trying to schedule local notification")
+        print("Total Logged Time before data: \(self.totalLoggedTime)")
+        print("Session count before data: \(self.sessionCount)")
         
         let center = UNUserNotificationCenter.current()
         
