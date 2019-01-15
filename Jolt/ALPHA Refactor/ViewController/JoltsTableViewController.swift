@@ -16,7 +16,7 @@ class JoltsTableViewController: UITableViewController {
     
     var habitName = String()
     var documentId = String()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +34,8 @@ class JoltsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Model count:")
+        print(model.count)
         return model.count
     }
 
@@ -44,6 +46,27 @@ class JoltsTableViewController: UITableViewController {
         // Configure the cell...
         cell.joltContent.text = model[indexPath.row].note
         cell.joltCreatedOnLabel.text = "Created on: \(stringFromDate(model[indexPath.row].createdOn))"
+        
+        // Load image if any
+        let imageURLString = "https://firebasestorage.googleapis.com/v0/b/jolt-25e19.appspot.com/o/users%2FPLiDCLwSPJeAPHyZbBayws1kJ0Q2%2FPLiDCLwSPJeAPHyZbBayws1kJ0Q2-newJoltImage.jpg?alt=media&token=ef5b4ef0-acf0-4083-afba-925dd76263b9"
+        
+        let imageUrl:URL = URL(string: imageURLString)!
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            
+            DispatchQueue.main.async {
+                let image = UIImage(data: imageData as Data)
+                if let image = image {
+                    print(image.size)
+                    cell.joltImageView.image = image
+                } else {
+                    print("Could not get the image")
+                }
+            
+            }
+        }
+            
 
         return cell
     }
@@ -134,7 +157,6 @@ extension JoltsTableViewController {
                 }
             }
         }
-        
         
         return dataArray
         

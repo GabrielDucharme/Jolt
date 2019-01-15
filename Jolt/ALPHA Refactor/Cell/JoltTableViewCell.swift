@@ -12,6 +12,7 @@ class JoltTableViewCell: UITableViewCell {
 
     @IBOutlet weak var joltContent: UILabel!
     @IBOutlet weak var joltCreatedOnLabel: UILabel!
+    @IBOutlet weak var joltImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

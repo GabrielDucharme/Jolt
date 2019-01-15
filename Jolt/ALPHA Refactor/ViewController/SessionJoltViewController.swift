@@ -46,6 +46,11 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func joltMediaPressed(_ sender: Any) {
+        
+        
+        // Camera permission
+        
+        
         // Open picture selector
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -103,7 +108,7 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
     
     func logNewJolt() {
         
-        let joltData = Jolt(note: joltTextView.text ?? "", createdOn: Date()).dictionary
+        let joltData = Jolt(note: joltTextView.text ?? "", createdOn: Date(), joltImage: "Change this to actual image url" ).dictionary
         
         let collectionReference = db.document("users/\(userID)").collection("Habits")
         let query = collectionReference.whereField("Name", isEqualTo: habitName)

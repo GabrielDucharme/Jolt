@@ -9,16 +9,10 @@
 /* Begin PBXBuildFile section */
 		02183FD1210A90F000F3404D /* HabitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02183FD0210A90F000F3404D /* HabitTableViewController.swift */; };
 		0219F81F2097A3C000347E58 /* JoltTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0219F81E2097A3C000347E58 /* JoltTableViewCell.swift */; };
-		021CF540209A167A00CE06B0 /* ArchivedHabitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021CF53F209A167A00CE06B0 /* ArchivedHabitTableViewController.swift */; };
-		022579771FD10797001EC2CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022579761FD10797001EC2CD /* AppDelegate.swift */; };
 		0225797C1FD10797001EC2CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0225797A1FD10797001EC2CD /* Main.storyboard */; };
 		022579811FD10797001EC2CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0225797F1FD10797001EC2CD /* LaunchScreen.storyboard */; };
-		0228DFEF20A4E6C1008A6BD9 /* DashboardViewControllerDeprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0228DFEE20A4E6C1008A6BD9 /* DashboardViewControllerDeprecated.swift */; };
-		0228DFF120A4E89A008A6BD9 /* DashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0228DFF020A4E89A008A6BD9 /* DashCollectionViewCell.swift */; };
-		02335B59205999E2009454B8 /* HabitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02335B58205999E2009454B8 /* HabitListTableViewController.swift */; };
 		0234FDAB21AEE83F002C10D2 /* DashboardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0234FDAA21AEE83F002C10D2 /* DashboardHeader.swift */; };
 		023EE69B20F664EA008115CB /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023EE69A20F664E9008115CB /* DashboardViewController.swift */; };
-		023F72172084F04A0017E902 /* NewJoltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023F72162084F04A0017E902 /* NewJoltViewController.swift */; };
 		024A7B472107D07C00E55B8D /* DashboardCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024A7B462107D07C00E55B8D /* DashboardCollectionViewLayout.swift */; };
 		024B058B2107DA8A002088CD /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B058A2107DA8A002088CD /* HabitViewController.swift */; };
 		024E1CEF2027E3B600858184 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 024E1CEE2027E3B600858184 /* GoogleService-Info.plist */; };
@@ -28,58 +22,45 @@
 		026EBE8B20A680750027123E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026EBE8A20A680740027123E /* Assets.xcassets */; };
 		0275DF7521933E04004BEE21 /* SessionJoltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0275DF7421933E04004BEE21 /* SessionJoltViewController.swift */; };
 		0279E7D62101443500E8D964 /* Dash01CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0279E7D52101443500E8D964 /* Dash01CollectionViewCell.swift */; };
-		0280963B20B87BA5004F0BA8 /* EditSessionTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0280963A20B87BA5004F0BA8 /* EditSessionTimeViewController.swift */; };
-		028C5A57209528FD00EFFBFD /* HabitIJoltsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C5A56209528FD00EFFBFD /* HabitIJoltsViewController.swift */; };
-		029D41CC2029353300CE5480 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D41CB2029353300CE5480 /* TimerViewController.swift */; };
 		029D41D02029469700CE5480 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D41CF2029469600CE5480 /* AuthVC.swift */; };
 		02A032B921ADB5210095EEC3 /* Dash02CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A032B821ADB5210095EEC3 /* Dash02CollectionViewCell.swift */; };
 		02A3A41621908C2F00FF591E /* SessionTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A41521908C2F00FF591E /* SessionTimerViewController.swift */; };
 		02A4A0342069C250008EDAED /* StringFromDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4A0332069C250008EDAED /* StringFromDate.swift */; };
 		02B15397206316E000368D9E /* HabitCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B15396206316E000368D9E /* HabitCreationViewController.swift */; };
 		02B34AC320C33A7500DBA4FB /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B34AC220C33A7500DBA4FB /* UITextFieldExtension.swift */; };
-		02B9C647202BCCBF004459DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9C646202BCCBF004459DC /* ProfileViewController.swift */; };
 		02C33E0B2099031C001464F6 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C33E092099031B001464F6 /* UIScrollView+EmptyDataSet.m */; };
 		02EAA6192031165900BF0775 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA6182031165900BF0775 /* Session.swift */; };
 		02EAA61B20327CC100BF0775 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA61A20327CC100BF0775 /* Habit.swift */; };
 		02EAA61D2032805A00BF0775 /* Jolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA61C2032805A00BF0775 /* Jolt.swift */; };
 		02ED82AC2195DBDC0095191C /* SessionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED82AB2195DBDC0095191C /* SessionEditViewController.swift */; };
 		07F5DF3254A5D21BEE420879 /* Pods_Jolt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D1E41A85C2DF71EB1A0EBB /* Pods_Jolt.framework */; };
+		9828B85E21EE3DF30015845D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828B85D21EE3DF30015845D /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02183FD0210A90F000F3404D /* HabitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewController.swift; sourceTree = "<group>"; };
 		0219F81E2097A3C000347E58 /* JoltTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoltTableViewCell.swift; sourceTree = "<group>"; };
-		021CF53F209A167A00CE06B0 /* ArchivedHabitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedHabitTableViewController.swift; sourceTree = "<group>"; };
 		022579731FD10797001EC2CD /* Jolt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jolt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		022579761FD10797001EC2CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0225797B1FD10797001EC2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		022579801FD10797001EC2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		022579821FD10797001EC2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0228DFEE20A4E6C1008A6BD9 /* DashboardViewControllerDeprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewControllerDeprecated.swift; sourceTree = "<group>"; };
-		0228DFF020A4E89A008A6BD9 /* DashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCollectionViewCell.swift; sourceTree = "<group>"; };
-		02335B58205999E2009454B8 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitListTableViewController.swift; path = Jolt/HabitListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		0234FDAA21AEE83F002C10D2 /* DashboardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeader.swift; sourceTree = "<group>"; };
 		023EE69A20F664E9008115CB /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		023F72162084F04A0017E902 /* NewJoltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJoltViewController.swift; sourceTree = "<group>"; };
 		024A7B462107D07C00E55B8D /* DashboardCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewLayout.swift; sourceTree = "<group>"; };
 		024B058A2107DA8A002088CD /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		024E1CEE2027E3B600858184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		024E5E46219DC30F00160A20 /* JoltsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoltsTableViewController.swift; sourceTree = "<group>"; };
 		025DA87321B04858006A0F4B /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
-		026818B32027ED1100FFB2A6 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserLoginViewController.swift; path = /Users/Gab/Desktop/CODING/JOLT_NOV17/Jolt/Jolt/UserLoginViewController.swift; sourceTree = "<absolute>"; };
+		026818B32027ED1100FFB2A6 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserLoginViewController.swift; path = ../../UserLoginViewController.swift; sourceTree = "<group>"; };
 		026EBE8A20A680740027123E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0275DF7421933E04004BEE21 /* SessionJoltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionJoltViewController.swift; sourceTree = "<group>"; };
 		0279E7D52101443500E8D964 /* Dash01CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dash01CollectionViewCell.swift; sourceTree = "<group>"; };
-		0280963A20B87BA5004F0BA8 /* EditSessionTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSessionTimeViewController.swift; sourceTree = "<group>"; };
-		028C5A56209528FD00EFFBFD /* HabitIJoltsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitIJoltsViewController.swift; sourceTree = "<group>"; };
-		029D41CB2029353300CE5480 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		029D41CF2029469600CE5480 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		02A032B821ADB5210095EEC3 /* Dash02CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dash02CollectionViewCell.swift; sourceTree = "<group>"; };
 		02A3A41521908C2F00FF591E /* SessionTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTimerViewController.swift; sourceTree = "<group>"; };
 		02A4A0332069C250008EDAED /* StringFromDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFromDate.swift; sourceTree = "<group>"; };
 		02B15396206316E000368D9E /* HabitCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreationViewController.swift; sourceTree = "<group>"; };
 		02B34AC220C33A7500DBA4FB /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
-		02B9C646202BCCBF004459DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		02C33E0820990319001464F6 /* Jolt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jolt-Bridging-Header.h"; sourceTree = "<group>"; };
 		02C33E092099031B001464F6 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		02C33E0A2099031C001464F6 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
@@ -89,6 +70,7 @@
 		02EAA61C2032805A00BF0775 /* Jolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jolt.swift; sourceTree = "<group>"; };
 		02ED82AB2195DBDC0095191C /* SessionEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEditViewController.swift; sourceTree = "<group>"; };
 		83D1E41A85C2DF71EB1A0EBB /* Pods_Jolt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jolt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9828B85D21EE3DF30015845D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE6A4A4C69C422F173C0E0D /* Pods-Jolt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jolt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jolt/Pods-Jolt.debug.xcconfig"; sourceTree = "<group>"; };
 		DDEE9C83C45703FA928BF363 /* Pods-Jolt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jolt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jolt/Pods-Jolt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,17 +111,8 @@
 				023EE69920F6611D008115CB /* ALPHA Refactor */,
 				02EAA615202FB83F00BF0775 /* Model */,
 				02EAA614202FAC8600BF0775 /* Jolt.entitlements */,
-				02B9C646202BCCBF004459DC /* ProfileViewController.swift */,
-				022579761FD10797001EC2CD /* AppDelegate.swift */,
-				029D41CB2029353300CE5480 /* TimerViewController.swift */,
-				02335B58205999E2009454B8 /* HabitListTableViewController.swift */,
-				028C5A56209528FD00EFFBFD /* HabitIJoltsViewController.swift */,
-				023F72162084F04A0017E902 /* NewJoltViewController.swift */,
-				021CF53F209A167A00CE06B0 /* ArchivedHabitTableViewController.swift */,
-				0228DFEE20A4E6C1008A6BD9 /* DashboardViewControllerDeprecated.swift */,
-				0228DFF020A4E89A008A6BD9 /* DashCollectionViewCell.swift */,
-				0280963A20B87BA5004F0BA8 /* EditSessionTimeViewController.swift */,
 				022579821FD10797001EC2CD /* Info.plist */,
+				9828B85D21EE3DF30015845D /* AppDelegate.swift */,
 				026EBE8A20A680740027123E /* Assets.xcassets */,
 				029D41CE2029355500CE5480 /* Support Files */,
 				029D41CD2029353B00CE5480 /* Storyboard */,
@@ -147,20 +120,20 @@
 			path = Jolt;
 			sourceTree = "<group>";
 		};
-		0234FDA921AEE81F002C10D2 /* Cells */ = {
+		0234FDA921AEE81F002C10D2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				025DA87321B04858006A0F4B /* HabitTableViewCell.swift */,
 				0234FDAA21AEE83F002C10D2 /* DashboardHeader.swift */,
 				0219F81E2097A3C000347E58 /* JoltTableViewCell.swift */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		023EE69920F6611D008115CB /* ALPHA Refactor */ = {
 			isa = PBXGroup;
 			children = (
-				0234FDA921AEE81F002C10D2 /* Cells */,
+				0234FDA921AEE81F002C10D2 /* Cell */,
 				02A4A0322069C22B008EDAED /* Components */,
 				024A7B452107D05000E55B8D /* Layout */,
 				0279E7D4210143FB00E8D964 /* View */,
@@ -437,38 +410,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9828B85E21EE3DF30015845D /* AppDelegate.swift in Sources */,
 				02C33E0B2099031C001464F6 /* UIScrollView+EmptyDataSet.m in Sources */,
 				0234FDAB21AEE83F002C10D2 /* DashboardHeader.swift in Sources */,
-				0228DFEF20A4E6C1008A6BD9 /* DashboardViewControllerDeprecated.swift in Sources */,
-				021CF540209A167A00CE06B0 /* ArchivedHabitTableViewController.swift in Sources */,
 				024A7B472107D07C00E55B8D /* DashboardCollectionViewLayout.swift in Sources */,
 				029D41D02029469700CE5480 /* AuthVC.swift in Sources */,
-				022579771FD10797001EC2CD /* AppDelegate.swift in Sources */,
 				024B058B2107DA8A002088CD /* HabitViewController.swift in Sources */,
-				0228DFF120A4E89A008A6BD9 /* DashCollectionViewCell.swift in Sources */,
 				02EAA6192031165900BF0775 /* Session.swift in Sources */,
 				02B15397206316E000368D9E /* HabitCreationViewController.swift in Sources */,
-				023F72172084F04A0017E902 /* NewJoltViewController.swift in Sources */,
 				02183FD1210A90F000F3404D /* HabitTableViewController.swift in Sources */,
 				02A3A41621908C2F00FF591E /* SessionTimerViewController.swift in Sources */,
 				023EE69B20F664EA008115CB /* DashboardViewController.swift in Sources */,
 				02ED82AC2195DBDC0095191C /* SessionEditViewController.swift in Sources */,
-				02B9C647202BCCBF004459DC /* ProfileViewController.swift in Sources */,
 				02A032B921ADB5210095EEC3 /* Dash02CollectionViewCell.swift in Sources */,
 				02EAA61D2032805A00BF0775 /* Jolt.swift in Sources */,
 				024E5E47219DC30F00160A20 /* JoltsTableViewController.swift in Sources */,
 				02A4A0342069C250008EDAED /* StringFromDate.swift in Sources */,
 				0279E7D62101443500E8D964 /* Dash01CollectionViewCell.swift in Sources */,
-				02335B59205999E2009454B8 /* HabitListTableViewController.swift in Sources */,
 				026818B42027ED1100FFB2A6 /* UserLoginViewController.swift in Sources */,
 				02EAA61B20327CC100BF0775 /* Habit.swift in Sources */,
 				0275DF7521933E04004BEE21 /* SessionJoltViewController.swift in Sources */,
 				02B34AC320C33A7500DBA4FB /* UITextFieldExtension.swift in Sources */,
 				0219F81F2097A3C000347E58 /* JoltTableViewCell.swift in Sources */,
-				028C5A57209528FD00EFFBFD /* HabitIJoltsViewController.swift in Sources */,
-				0280963B20B87BA5004F0BA8 /* EditSessionTimeViewController.swift in Sources */,
 				025DA87421B04858006A0F4B /* HabitTableViewCell.swift in Sources */,
-				029D41CC2029353300CE5480 /* TimerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -90,7 +90,7 @@ class SessionTimerViewController: UIViewController {
     }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TimerViewController.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SessionTimerViewController.updateTimer), userInfo: nil, repeats: true)
     }
     
     func timeString(time:TimeInterval) -> String {
@@ -316,7 +316,7 @@ extension SessionTimerViewController {
         
         if timerIsRunning {
             if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
-                (diffHrs, diffMins, diffSecs) = TimerViewController.getTimeDifference(startDate: savedDate)
+                (diffHrs, diffMins, diffSecs) = SessionTimerViewController.getTimeDifference(startDate: savedDate)
             }
             
             self.refreshTimer(hours: diffHrs, mins: diffMins, secs: diffSecs)
@@ -325,6 +325,12 @@ extension SessionTimerViewController {
     
     @objc func willEnterTerminate(noti: Notification) {
         print("App has been terminated")
+    }
+    
+    static func getTimeDifference(startDate: Date) -> (Int, Int, Int) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute, .second], from: startDate, to: Date())
+        return(components.hour!, components.minute!, components.second!)
     }
     
     func refreshTimer(hours: Int, mins: Int, secs: Int) {

@@ -12,12 +12,14 @@ struct Jolt {
     
     let note: String
     let createdOn: Date
+    let joltImage: String?
 
     
     var dictionary:[String: Any] {
         return [
             "Note": note,
             "Created On": createdOn,
+            "Image Url": joltImage
         ]
     }
     
@@ -26,10 +28,11 @@ struct Jolt {
 extension Jolt: DocumentSerializable {
     init?(dictionary: [String : Any]) {
       guard let note = dictionary["Note"] as? String,
-            let createdOn = dictionary["Created On"] as? Date
+            let createdOn = dictionary["Created On"] as? Date,
+            let joltImage = dictionary["Image Url"] as? String
             else {return nil}
         
-        self.init(note: note, createdOn: createdOn)
+        self.init(note: note, createdOn: createdOn, joltImage: joltImage)
         
     }
 }
