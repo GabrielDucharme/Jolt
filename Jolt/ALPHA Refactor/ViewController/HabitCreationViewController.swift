@@ -19,7 +19,7 @@ class HabitCreationViewController: UIViewController {
     @IBOutlet weak var newHabitNameTextField: UITextField!
     @IBOutlet weak var sessionTimeLabel: UILabel!
     @IBOutlet weak var sessionTimeStepper: UIStepper!
-    
+    @IBOutlet weak var habitDescriptionTextView: UITextView!
     
     @IBAction func sessionTimeValueChanged(_ sender: UIStepper) {
         sessionTimeLabel.text = "\(Int(sessionTimeStepper.value).description)"
@@ -48,7 +48,7 @@ class HabitCreationViewController: UIViewController {
                     
                     if habitNameIsAvailable {
                         
-                        let newHabit = Habit(name: "\(self.newHabitNameTextField.text!)", sessionLength: Int(self.sessionTimeStepper.value), createdOn: Date(), sessionCount: 0, totalTimeLogged: 0, joltCount: 0, archived: false)
+                        let newHabit = Habit(name: "\(self.newHabitNameTextField.text!)", description: "\(self.habitDescriptionTextView.text!)", sessionLength: Int(self.sessionTimeStepper.value), createdOn: Date(), sessionCount: 0, totalTimeLogged: 0, joltCount: 0, archived: false)
                         
                         var ref:DocumentReference? = nil
                         ref = self.db.document("users/\(self.userID)").collection("Habits").addDocument(data: newHabit.dictionary) {
@@ -72,7 +72,7 @@ class HabitCreationViewController: UIViewController {
             }
             
         } else {
-            let alertController = UIAlertController(title: "Oops!", message: "Your new habit need a name!", preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: "Oops!", message: "Your new habit need a name and a description!", preferredStyle: .actionSheet)
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (alert: UIAlertAction!) in
             })
             alertController.addAction(okAction)

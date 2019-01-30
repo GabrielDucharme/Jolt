@@ -13,12 +13,18 @@ import FirebaseAuthUI
 class JoltsTableViewController: UITableViewController {
     
     lazy var model = generateModel()
+    lazy var storage = Storage.storage()
     
     var habitName = String()
     var documentId = String()
+    var habitDescription = String()
+    
+    @IBOutlet weak var habitDescriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        habitDescriptionLabel.text = habitDescription
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,8 +40,6 @@ class JoltsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Model count:")
-        print(model.count)
         return model.count
     }
 
@@ -48,22 +52,28 @@ class JoltsTableViewController: UITableViewController {
         cell.joltCreatedOnLabel.text = "Created on: \(stringFromDate(model[indexPath.row].createdOn))"
         
         // Load image if any
-        let imageURLString = "https://firebasestorage.googleapis.com/v0/b/jolt-25e19.appspot.com/o/users%2FPLiDCLwSPJeAPHyZbBayws1kJ0Q2%2FPLiDCLwSPJeAPHyZbBayws1kJ0Q2-newJoltImage.jpg?alt=media&token=ef5b4ef0-acf0-4083-afba-925dd76263b9"
+        let gsReference = storage.reference(forURL: "\(model[indexPath.row].joltImage!)")
         
-        let imageUrl:URL = URL(string: imageURLString)!
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            let imageData:NSData = NSData(contentsOf: imageUrl)!
-            
-            DispatchQueue.main.async {
-                let image = UIImage(data: imageData as Data)
-                if let image = image {
-                    print(image.size)
-                    cell.joltImageView.image = image
-                } else {
-                    print("Could not get the image")
+        gsReference.downloadURL { (url, error) in
+            if error != nil {
+                print("No url")
+            } else {
+                
+                let imageUrl:URL = url!
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let imageData:NSData = NSData(contentsOf: imageUrl)!
+                    
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: imageData as Data)
+                        if let image = image {
+                            print(image.size)
+                            cell.joltImageView.image = image
+                        } else {
+                            print("Could not get the image")
+                        }
+                    }
                 }
-            
             }
         }
             

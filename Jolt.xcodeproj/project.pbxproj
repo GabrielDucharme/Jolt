@@ -34,7 +34,11 @@
 		02EAA61D2032805A00BF0775 /* Jolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAA61C2032805A00BF0775 /* Jolt.swift */; };
 		02ED82AC2195DBDC0095191C /* SessionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED82AB2195DBDC0095191C /* SessionEditViewController.swift */; };
 		07F5DF3254A5D21BEE420879 /* Pods_Jolt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D1E41A85C2DF71EB1A0EBB /* Pods_Jolt.framework */; };
+		980DF3E42201135F00B0172C /* HabitHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980DF3E32201135F00B0172C /* HabitHeaderTableViewCell.swift */; };
 		9828B85E21EE3DF30015845D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828B85D21EE3DF30015845D /* AppDelegate.swift */; };
+		984F88D121F946D3002C0B41 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984F88D021F946D3002C0B41 /* ChatViewController.swift */; };
+		984F88D821F94C55002C0B41 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984F88D721F94C55002C0B41 /* Message.swift */; };
+		984F88DA21F95198002C0B41 /* OnlineFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984F88D921F95198002C0B41 /* OnlineFriendsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +74,11 @@
 		02EAA61C2032805A00BF0775 /* Jolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jolt.swift; sourceTree = "<group>"; };
 		02ED82AB2195DBDC0095191C /* SessionEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEditViewController.swift; sourceTree = "<group>"; };
 		83D1E41A85C2DF71EB1A0EBB /* Pods_Jolt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jolt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		980DF3E32201135F00B0172C /* HabitHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9828B85D21EE3DF30015845D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		984F88D021F946D3002C0B41 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		984F88D721F94C55002C0B41 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		984F88D921F95198002C0B41 /* OnlineFriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineFriendsTableViewController.swift; sourceTree = "<group>"; };
 		CEE6A4A4C69C422F173C0E0D /* Pods-Jolt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jolt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jolt/Pods-Jolt.debug.xcconfig"; sourceTree = "<group>"; };
 		DDEE9C83C45703FA928BF363 /* Pods-Jolt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jolt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jolt/Pods-Jolt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +134,7 @@
 				025DA87321B04858006A0F4B /* HabitTableViewCell.swift */,
 				0234FDAA21AEE83F002C10D2 /* DashboardHeader.swift */,
 				0219F81E2097A3C000347E58 /* JoltTableViewCell.swift */,
+				980DF3E32201135F00B0172C /* HabitHeaderTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -133,6 +142,7 @@
 		023EE69920F6611D008115CB /* ALPHA Refactor */ = {
 			isa = PBXGroup;
 			children = (
+				984F88D221F948B3002C0B41 /* Controllers */,
 				0234FDA921AEE81F002C10D2 /* Cell */,
 				02A4A0322069C22B008EDAED /* Components */,
 				024A7B452107D05000E55B8D /* Layout */,
@@ -162,6 +172,8 @@
 				0275DF7421933E04004BEE21 /* SessionJoltViewController.swift */,
 				02ED82AB2195DBDC0095191C /* SessionEditViewController.swift */,
 				024E5E46219DC30F00160A20 /* JoltsTableViewController.swift */,
+				984F88D021F946D3002C0B41 /* ChatViewController.swift */,
+				984F88D921F95198002C0B41 /* OnlineFriendsTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -211,8 +223,16 @@
 				02EAA6182031165900BF0775 /* Session.swift */,
 				02EAA61A20327CC100BF0775 /* Habit.swift */,
 				02EAA61C2032805A00BF0775 /* Jolt.swift */,
+				984F88D721F94C55002C0B41 /* Message.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		984F88D221F948B3002C0B41 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CAA969D473E20FB605161A50 /* Pods */ = {
@@ -347,6 +367,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/HGCircularSlider/HGCircularSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -366,6 +388,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGCircularSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -411,12 +435,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9828B85E21EE3DF30015845D /* AppDelegate.swift in Sources */,
+				980DF3E42201135F00B0172C /* HabitHeaderTableViewCell.swift in Sources */,
 				02C33E0B2099031C001464F6 /* UIScrollView+EmptyDataSet.m in Sources */,
 				0234FDAB21AEE83F002C10D2 /* DashboardHeader.swift in Sources */,
 				024A7B472107D07C00E55B8D /* DashboardCollectionViewLayout.swift in Sources */,
+				984F88DA21F95198002C0B41 /* OnlineFriendsTableViewController.swift in Sources */,
 				029D41D02029469700CE5480 /* AuthVC.swift in Sources */,
 				024B058B2107DA8A002088CD /* HabitViewController.swift in Sources */,
 				02EAA6192031165900BF0775 /* Session.swift in Sources */,
+				984F88D821F94C55002C0B41 /* Message.swift in Sources */,
 				02B15397206316E000368D9E /* HabitCreationViewController.swift in Sources */,
 				02183FD1210A90F000F3404D /* HabitTableViewController.swift in Sources */,
 				02A3A41621908C2F00FF591E /* SessionTimerViewController.swift in Sources */,
@@ -428,6 +455,7 @@
 				02A4A0342069C250008EDAED /* StringFromDate.swift in Sources */,
 				0279E7D62101443500E8D964 /* Dash01CollectionViewCell.swift in Sources */,
 				026818B42027ED1100FFB2A6 /* UserLoginViewController.swift in Sources */,
+				984F88D121F946D3002C0B41 /* ChatViewController.swift in Sources */,
 				02EAA61B20327CC100BF0775 /* Habit.swift in Sources */,
 				0275DF7521933E04004BEE21 /* SessionJoltViewController.swift in Sources */,
 				02B34AC320C33A7500DBA4FB /* UITextFieldExtension.swift in Sources */,

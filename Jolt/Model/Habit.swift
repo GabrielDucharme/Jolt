@@ -15,6 +15,7 @@ protocol DocumentSerializable {
 struct Habit {
     
     let name: String
+    let description: String
     let sessionLength: Int
     let createdOn: Date
     let sessionCount: Int
@@ -25,6 +26,7 @@ struct Habit {
     var dictionary:[String: Any] {
         return [
             "Name": name,
+            "Description": description,
             "Session Length": sessionLength,
             "Created On": createdOn,
             "Session Count": sessionCount,
@@ -39,6 +41,7 @@ struct Habit {
 extension Habit: DocumentSerializable {
     init?(dictionary: [String : Any]) {
         guard let name = dictionary["Name"] as? String,
+        let description = dictionary["Description"] as? String,
         let sessionLength = dictionary["Session Length"] as? Int,
         let createdOn = dictionary["Created On"] as? Date,
         let sessionCount = dictionary["Session Count"] as? Int,
@@ -51,7 +54,7 @@ extension Habit: DocumentSerializable {
                 
         }
         
-        self.init(name: name, sessionLength: sessionLength, createdOn: createdOn, sessionCount: sessionCount, totalTimeLogged: totalTimeLogged, joltCount: joltCount, archived: archived)
+        self.init(name: name, description: description, sessionLength: sessionLength, createdOn: createdOn, sessionCount: sessionCount, totalTimeLogged: totalTimeLogged, joltCount: joltCount, archived: archived)
         
     }
 }

@@ -37,11 +37,13 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
         
         if let user = Auth.auth().currentUser {
             // Truncating the first name out of Firebase user.displayName
-            var displayName = user.displayName!
-            
-            if let spaceRange = displayName.range(of: " ") {
-                displayName.removeSubrange(spaceRange.lowerBound..<displayName.endIndex)
+            /*
+            if let displayName = user.displayName {
+                if let spaceRange = displayName.range(of: " ") {
+                    displayName.removeSubrange(spaceRange.lowerBound..<displayName.endIndex)
+                }
             }
+            */
         }
 
         // Do any additional setup after loading the view.

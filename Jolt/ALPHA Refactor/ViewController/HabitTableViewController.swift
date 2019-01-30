@@ -84,6 +84,7 @@ extension HabitTableViewController {
         if let destination = segue.destination as? JoltsTableViewController {
             if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
                 destination.habitName = habitArray[indexPath.row].name
+                destination.habitDescription = habitArray[indexPath.row].description
             }
         }
     }

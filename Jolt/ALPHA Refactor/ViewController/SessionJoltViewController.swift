@@ -19,6 +19,8 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
     
     var habitName = String()
     var joltCount = Int()
+    var imageReferenceURL = String()
+    var imageUploadData = Data()
     
     lazy var storage = Storage.storage()
 
@@ -72,26 +74,35 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         let optimizedImage = joltImage.jpegData(compressionQuality: 30)
-        uploadJoltImage(imageData: optimizedImage!)
-    }
-    
-    func uploadJoltImage(imageData: Data) {
+        imageUploadData = optimizedImage!
+        
+        /*
         let activityIndicator = UIActivityIndicatorView.init(style: .gray)
         activityIndicator.startAnimating()
         activityIndicator.center = self.view.center
         self.view.addSubview(activityIndicator)
         
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+        */
+        
+        imageView.image = joltImage
+        
+    }
+    
+    func uploadJoltImage(imageData: Data) {
+        
         let storageReference = storage.reference()
         
-        let profileImageRef = storageReference.child("users").child(currentUser!.uid).child("\(currentUser!.uid)-newJoltImage.jpg")
+        //let imageRef = storageReference.child("users").child(currentUser!.uid).child("\(currentUser!.uid).jpg")
+        let uuid = UUID().uuidString
+        let imageRef = storageReference.child("users").child(currentUser!.uid).child("\(currentUser!.uid)\(uuid).jpg")
+        self.imageReferenceURL = "\(imageRef)"
         
         let uploadMetaData = StorageMetadata()
         uploadMetaData.contentType = "image/jpeg"
         
-        profileImageRef.putData(imageData, metadata: uploadMetaData) { (uploadedImageMeta, error) in
-            
-            activityIndicator.stopAnimating()
-            activityIndicator.removeFromSuperview()
+        imageRef.putData(imageData, metadata: uploadMetaData) { (uploadedImageMeta, error) in
             
             if error != nil
             {
@@ -108,7 +119,9 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
     
     func logNewJolt() {
         
-        let joltData = Jolt(note: joltTextView.text ?? "", createdOn: Date(), joltImage: "Change this to actual image url" ).dictionary
+        uploadJoltImage(imageData: imageUploadData)
+        
+        let joltData = Jolt(note: joltTextView.text ?? "", createdOn: Date(), joltImage: "\(imageReferenceURL)" ).dictionary
         
         let collectionReference = db.document("users/\(userID)").collection("Habits")
         let query = collectionReference.whereField("Name", isEqualTo: habitName)

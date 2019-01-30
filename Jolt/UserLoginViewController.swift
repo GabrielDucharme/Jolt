@@ -30,7 +30,7 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDel
         super.viewDidLoad()
         
         // Check if user is already logged in
-        isUserLogged()
+        isUserLoggedIn()
         
         // Login Button Setup
         loginButton.layer.cornerRadius = 7.0
@@ -80,7 +80,8 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDel
         
     }
     
-    func isUserLogged() {
+    func isUserLoggedIn() {
+        
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
                 // Create a user profile in Firebase Firestore
@@ -92,12 +93,12 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDel
                     
                     self.docRef = Firestore.firestore().document("users/\(uid)")
                     
-                    let dataToSave : [String: Any] = ["name": "\(name!)", "Email": "\(email!)", "PhotoUrl": "\(photoUrl!)"]
+                    let dataToSave : [String: Any] = ["UID": "\(uid)","name": "\(name)", "Email": "\(email!)", "PhotoUrl": "\(photoUrl)"]
                     self.docRef.setData(dataToSave, options: SetOptions.merge()) { (error) in
                         if let error = error {
                             print("Oh no! Some error \(error.localizedDescription)")
                         } else {
-                            print("User data was saved \(name!)")
+                            print("User data was saved \(name)")
                         }
                     }
                 }
