@@ -30,6 +30,7 @@ class SessionTimerViewController: UIViewController {
     var totalLoggedTime = Int()
     var joltsCount = Int()
     var sessionCount = Int()
+    var habitDescription = String()
     
     // Timer Proprieties
     var sessionLengthInMinutes = 0
@@ -53,6 +54,7 @@ class SessionTimerViewController: UIViewController {
     @IBOutlet weak var sessionMessage: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var startPauseButton: UIButton!
+    @IBOutlet weak var habitDescriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +77,7 @@ class SessionTimerViewController: UIViewController {
     
     func prepareView() {
         habitButton.setTitle(habitName, for: .normal)
+        habitDescriptionLabel.text = habitDescription
         timeLabel.text = "\(sessionLengthInMinutes) minutes"
         sessionLengthInSeconds = sessionLengthInMinutes * 60
     }
@@ -156,6 +159,7 @@ class SessionTimerViewController: UIViewController {
         if segue.identifier == "edit habit",
             let destination = segue.destination as? SessionEditViewController {
             destination.habitName = habitName
+            destination.habitDescription = habitDescription
             destination.sessionTime = sessionLengthInMinutes
             destination.onSave = onSave
         }
@@ -253,24 +257,34 @@ extension SessionTimerViewController {
     }
     
     // User edit on habit
-    func onSave(_ time: Int, _ name: String) {
+    func onSave(_ time: Int, _ name: String, description: String) {
+        
+        print("Onsave: Time = \(time)")
+        print("Onsave: Name = \(name)")
+        print("Onsave: Des = \(description)")
         
         // Update Session Length in Firebase
-        let name = habitName
         let collectionReference = db.document("users/\(userID)").collection("Habits")
-        let query = collectionReference.whereField("Name", isEqualTo: name)
+        let query = collectionReference.whereField("Name", isEqualTo: habitName)
         query.getDocuments(completion: { (snapshot, error) in
             if let error =  error {
                 print(error.localizedDescription)
             } else {
                 for document in snapshot!.documents {
-                    
+                    print("Trying to save")
                     self.db.document("users/\(self.userID)").collection("Habits").document("\(document.documentID)").updateData([
-                        "Session Length" : time
+                        "Session Length" : time,
+                        "Name" : name,
+                        "Description": description
+                        
                     ]) { err in
                         if let err = err {
                             print("Error updating document: \(err)")
                         } else {
+                            self.habitName = name
+                            self.habitDescription = description
+                            self.habitDescriptionLabel.text = description
+                            self.habitButton.setTitle(name, for: .normal)
                             print("Document successfully updated")
                         }
                     }

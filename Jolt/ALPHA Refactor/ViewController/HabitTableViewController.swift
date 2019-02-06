@@ -75,6 +75,7 @@ extension HabitTableViewController {
         let destination = segue.destination as? SessionTimerViewController,
             let habitIndex = tableView.indexPathForSelectedRow?.row {
             destination.habitName = habitArray[habitIndex].name
+            destination.habitDescription = habitArray[habitIndex].description
             destination.sessionLengthInMinutes = habitArray[habitIndex].sessionLength
             destination.joltsCount = habitArray[habitIndex].joltCount
             destination.sessionCount = habitArray[habitIndex].sessionCount
