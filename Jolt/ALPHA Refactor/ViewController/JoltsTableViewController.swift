@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseAuthUI
+import FirebaseUI
 
 class JoltsTableViewController: UITableViewController {
     

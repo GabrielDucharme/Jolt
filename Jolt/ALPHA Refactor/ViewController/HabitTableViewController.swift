@@ -14,6 +14,7 @@ class HabitTableViewController: UITableViewController, DZNEmptyDataSetSource, DZ
     var db:Firestore!
     
     var habitArray = [Habit]()
+    var sectionArray = ["General","Health","Learning"]
     
     lazy var userID: String = {
         Auth.auth().currentUser!.uid
@@ -42,12 +43,23 @@ class HabitTableViewController: UITableViewController, DZNEmptyDataSetSource, DZ
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return sectionArray.count
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = sectionArray[section]
+        label.backgroundColor = UIColor.blue
+        return label
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return habitArray.count
+        if section == 0 {
+            return habitArray.count
+        }
+        
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,9 +68,13 @@ class HabitTableViewController: UITableViewController, DZNEmptyDataSetSource, DZ
         let habit = habitArray[indexPath.row]
         cell.habitNameLabel.text = "\(habit.name.uppercased())"
         // Put this somewhere else
-        let dateA = habit.createdOn
+        let TimeStampA = habit.createdOn
+        let dateA = TimeStampA.dateValue()
         let dateB = Date()
-        let diffInDays = Calendar.current.dateComponents([.day], from: dateA, to: dateB).day;    cell.habitStartedAtLabel.text = "Started: \(diffInDays!) days ago"
+        
+        let diffInDays = Calendar.current.dateComponents([.day], from: dateA, to: dateB).day
+        cell.habitStartedAtLabel.text = "Started: \(diffInDays!) days ago"
+        
         cell.habitTimeSpentLabel.text = "Total time: \(habit.totalTimeLogged) minutes"
         
         return cell

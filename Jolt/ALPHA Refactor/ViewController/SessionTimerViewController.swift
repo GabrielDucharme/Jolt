@@ -9,7 +9,7 @@
 import UIKit
 import HGCircularSlider
 import Firebase
-import FirebaseAuthUI
+import FirebaseUI
 import UserNotifications
 
 class SessionTimerViewController: UIViewController {

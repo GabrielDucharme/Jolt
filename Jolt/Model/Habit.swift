@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 protocol DocumentSerializable {
     init?(dictionary:[String:Any])
@@ -17,7 +18,7 @@ struct Habit {
     let name: String
     let description: String
     let sessionLength: Int
-    let createdOn: Date
+    let createdOn: Timestamp
     let sessionCount: Int
     let totalTimeLogged: Int
     var joltCount: Int
@@ -40,18 +41,45 @@ struct Habit {
 
 extension Habit: DocumentSerializable {
     init?(dictionary: [String : Any]) {
-        guard let name = dictionary["Name"] as? String,
-        let description = dictionary["Description"] as? String,
-        let sessionLength = dictionary["Session Length"] as? Int,
-        let createdOn = dictionary["Created On"] as? Date,
-        let sessionCount = dictionary["Session Count"] as? Int,
-        let totalTimeLogged = dictionary["Total Time Logged"] as? Int,
-        let joltCount = dictionary["Jolt Count"] as? Int,
-        let archived = dictionary["Archived"] as? Bool
-            else {
-                print("Houston we have a problem")
-                return nil
-                
+        
+        guard let name = dictionary["Name"] as? String else {
+            print("Houston we have a problem with the name")
+            return nil
+        }
+        
+        guard let description = dictionary["Description"] as? String else {
+            print("Houston we have a problem with the description")
+            return nil
+        }
+        
+        guard let sessionLength = dictionary["Session Length"] as? Int else {
+            print("Houston we have a problem with the Session Length")
+            return nil
+        }
+        
+        guard let createdOn = dictionary["Created On"] as? Timestamp else {
+            print("Houston we have a problem with Created On")
+            return nil
+        }
+        
+        guard let sessionCount = dictionary["Session Count"] as? Int else {
+            print("Houston we have a problem with Session Count")
+            return nil
+        }
+        
+        guard let totalTimeLogged = dictionary["Total Time Logged"] as? Int else {
+            print("Houston we have a problem with Total Time Logged")
+            return nil
+        }
+        
+        guard let joltCount = dictionary["Jolt Count"] as? Int else {
+            print("Houston we have a problem with Jolt Count")
+            return nil
+        }
+        
+        guard let archived = dictionary["Archived"] as? Bool else {
+            print("Houston we have a problem with archived")
+            return nil
         }
         
         self.init(name: name, description: description, sessionLength: sessionLength, createdOn: createdOn, sessionCount: sessionCount, totalTimeLogged: totalTimeLogged, joltCount: joltCount, archived: archived)

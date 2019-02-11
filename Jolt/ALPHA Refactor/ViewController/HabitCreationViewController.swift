@@ -48,7 +48,7 @@ class HabitCreationViewController: UIViewController {
                     
                     if habitNameIsAvailable {
                         
-                        let newHabit = Habit(name: "\(self.newHabitNameTextField.text!)", description: "\(self.habitDescriptionTextView.text!)", sessionLength: Int(self.sessionTimeStepper.value), createdOn: Date(), sessionCount: 0, totalTimeLogged: 0, joltCount: 0, archived: false)
+                        let newHabit = Habit(name: "\(self.newHabitNameTextField.text!)", description: "\(self.habitDescriptionTextView.text!)", sessionLength: Int(self.sessionTimeStepper.value), createdOn: Timestamp(), sessionCount: 0, totalTimeLogged: 0, joltCount: 0, archived: false)
                         
                         var ref:DocumentReference? = nil
                         ref = self.db.document("users/\(self.userID)").collection("Habits").addDocument(data: newHabit.dictionary) {

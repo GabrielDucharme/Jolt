@@ -31,7 +31,9 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>com.googleusercontent.apps.177543315775-42nnrjpid6ptkclfmp2pi302ac0tpq9e</string>
+			</array>
 			<key>FacebookAppId</key>
 			<string>fb187610355329164</string>
 		</dict>

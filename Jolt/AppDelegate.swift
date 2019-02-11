@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseCore
-import FirebaseAuthUI
+import FirebaseUI
 import UserNotifications
 
 @UIApplicationMain

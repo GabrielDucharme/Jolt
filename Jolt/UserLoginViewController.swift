@@ -7,9 +7,8 @@
 
 import UIKit
 import Firebase
-import FirebaseAuthUI
-import FirebaseGoogleAuthUI
-import FirebaseFacebookAuthUI
+import FirebaseUI
+import FirebaseAuth
 
 class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDelegate {
     
@@ -36,6 +35,11 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDel
         loginButton.layer.cornerRadius = 7.0
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -69,7 +73,8 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDel
         
         let googleProvider = FUIGoogleAuth()
         let facebookProvider = FUIFacebookAuth()
-        authUI?.providers = [googleProvider, facebookProvider]
+        let phoneProvider = FUIPhoneAuth(authUI: FUIAuth.defaultAuthUI()!)
+        authUI?.providers = [phoneProvider, googleProvider, facebookProvider]
         let authViewController = AuthVC(authUI: authUI!)
         let navc = UINavigationController(rootViewController: authViewController)
         self.present(navc, animated: true, completion: nil)
@@ -86,15 +91,15 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDel
             if user != nil {
                 // Create a user profile in Firebase Firestore
                 if let user = user {
-                    let name = user.displayName
+                    let name = user.displayName ?? ""
                     let uid = user.uid
-                    let email = user.email
-                    let photoUrl = user.photoURL
+                    let email = user.email ?? ""
+                    let photoUrl = user.photoURL ?? nil
                     
                     self.docRef = Firestore.firestore().document("users/\(uid)")
                     
-                    let dataToSave : [String: Any] = ["UID": "\(uid)","name": "\(name)", "Email": "\(email!)", "PhotoUrl": "\(photoUrl)"]
-                    self.docRef.setData(dataToSave, options: SetOptions.merge()) { (error) in
+                    let dataToSave : [String: Any] = ["UID": "\(uid)","Name": "\(name)", "Email": "\(email)", "PhotoUrl": "\(photoUrl)"]
+                    self.docRef.setData(dataToSave) { (error) in
                         if let error = error {
                             print("Oh no! Some error \(error.localizedDescription)")
                         } else {
@@ -105,7 +110,7 @@ class UserLoginViewController: UIViewController, FUIAuthDelegate, CAAnimationDel
                 // User is signed in so segue to his habits
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                // No user is signed in.
+                print("No user is sign-in right now")
 
             }
         }
