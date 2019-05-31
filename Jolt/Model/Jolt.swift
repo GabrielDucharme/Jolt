@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import Firebase
 
 struct Jolt {
     
     let note: String
-    let createdOn: Date
+    let createdOn: Timestamp
     let joltImage: String?
 
     
@@ -28,9 +29,9 @@ struct Jolt {
 extension Jolt: DocumentSerializable {
     init?(dictionary: [String : Any]) {
       guard let note = dictionary["Note"] as? String,
-            let createdOn = dictionary["Created On"] as? Date,
+            let createdOn = dictionary["Created On"] as? Timestamp,
             let joltImage = dictionary["Image Url"] as? String
-            else {return nil}
+        else {print("Houston we have a problem with the Jolt Model"); return nil}
         
         self.init(note: note, createdOn: createdOn, joltImage: joltImage)
         

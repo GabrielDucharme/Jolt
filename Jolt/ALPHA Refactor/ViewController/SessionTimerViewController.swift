@@ -75,6 +75,12 @@ class SessionTimerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        
+        self.timer.invalidate()
+    }
+    
     func prepareView() {
         habitButton.setTitle(habitName, for: .normal)
         habitDescriptionLabel.text = habitDescription
@@ -105,9 +111,11 @@ class SessionTimerViewController: UIViewController {
     @objc func updateTimer() {
         if currentSessionTime < 1 {
             // Add current session to total in firebase
+            self.timer.invalidate()
             addSessionToFirebase()
         } else {
             currentSessionTime -= 1
+            print(currentSessionTime)
             timeLabel.text = timeString(time: TimeInterval(currentSessionTime))
             circularSlider.endPointValue = (CGFloat(currentSessionTime) - 0.1)
         }
@@ -182,6 +190,7 @@ class SessionTimerViewController: UIViewController {
         if !timerIsRunning {
             // Timer has started
             runTimer()
+            print("DEBUG: Timer is now running...")
             timerIsRunning = true
             scheduleLocal()
             sessionMessage.text = "Activity Tracking In Progress..."

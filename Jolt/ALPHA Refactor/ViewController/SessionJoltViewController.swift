@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MobileCoreServices
 
 class SessionJoltViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -35,6 +36,15 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
         self.hideKeyboardWhenTappedAround()
     }
     
+    @objc func video(_ videoPath: String, didFinishSavingWithError error: Error?, contextInfo info: AnyObject) {
+        let title = (error == nil) ? "Success" : "Error"
+        let message = (error == nil) ? "Video was saved" : "Video failed to save"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     // IBA ACTIONS:
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -47,33 +57,87 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func joltMediaPressed(_ sender: Any) {
-        
-        
-        // Camera permission
-        
-        
+
         // Open picture selector
         let vc = UIImagePickerController()
         vc.delegate = self
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             vc.sourceType = .camera
+            vc.sourceType = .photoLibrary
         } else {
             vc.sourceType = .photoLibrary
         }
         vc.allowsEditing = true
         present(vc, animated: true)
+        
+    }
+    
+    @IBAction func videoPressed(_ sender: Any) {
+        
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            vc.sourceType = .camera
+            vc.mediaTypes = [kUTTypeMovie as String]
+        } else {
+            print("did not detect video camera")
+            vc.sourceType = .savedPhotosAlbum
+        }
+        vc.allowsEditing = true
+        vc.videoQuality = .typeHigh
+        present(vc, animated: true)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         
-        guard let joltImage = info[.editedImage] as? UIImage else {
-            print("No image found")
-            return
+        if let joltImage = info[.editedImage] as? UIImage {
+            let optimizedImage = joltImage.jpegData(compressionQuality: 30)
+            imageUploadData = optimizedImage!
+            imageView.image = joltImage
         }
         
-        let optimizedImage = joltImage.jpegData(compressionQuality: 30)
-        imageUploadData = optimizedImage!
+        if let joltVideo = info[UIImagePickerController.InfoKey.mediaType] as? String,
+            joltVideo == (kUTTypeMovie as String),
+            let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL,
+            UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(url.path) {
+            
+            UISaveVideoAtPathToSavedPhotosAlbum(url.path, self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
+            
+            if let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL {
+                print("Here is the file URL: ", videoURL)
+                
+                // Need to update the Upload function to take into account both video and images
+                let videoData = NSData(contentsOf: videoURL as URL)
+                
+                let storageReference = storage.reference()
+                let uuid = UUID().uuidString
+                let videoRef = storageReference.child("users").child(currentUser!.uid).child("\(currentUser!.uid)\(uuid).mov")
+                self.imageReferenceURL = "\(videoRef)"
+                
+                let uploadMetaData = StorageMetadata()
+                uploadMetaData.contentType = "video/mov"
+                
+                videoRef.putData(videoData as! Data, metadata: uploadMetaData) { (uploadedImageMeta, error) in
+                    
+                    if error != nil
+                    {
+                        print("Error took place \(String(describing: error?.localizedDescription))")
+                        return
+                    } else {
+                        
+                        self.imageView.image = UIImage(data: videoData as! Data)
+                        
+                        print("Meta data of uploaded image \(String(describing: uploadedImageMeta))")
+                    }
+                }
+            }
+            
+            
+            imageView.backgroundColor = .red
+        }
         
         /*
         let activityIndicator = UIActivityIndicatorView.init(style: .gray)
@@ -84,8 +148,6 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
         */
-        
-        imageView.image = joltImage
         
     }
     
@@ -120,7 +182,10 @@ class SessionJoltViewController: UIViewController, UIImagePickerControllerDelega
         
         uploadJoltImage(imageData: imageUploadData)
         
-        let joltData = Jolt(note: joltTextView.text ?? "", createdOn: Date(), joltImage: "\(imageReferenceURL)" ).dictionary
+        let date = Date()
+        let timeStamp = Timestamp(date: date)
+        
+        let joltData = Jolt(note: joltTextView.text ?? "", createdOn: timeStamp, joltImage: "\(imageReferenceURL)" ).dictionary
         
         let collectionReference = db.document("users/\(userID)").collection("Habits")
         let query = collectionReference.whereField("Name", isEqualTo: habitName)

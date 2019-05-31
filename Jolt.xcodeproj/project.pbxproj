@@ -40,7 +40,41 @@
 		984F88D821F94C55002C0B41 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984F88D721F94C55002C0B41 /* Message.swift */; };
 		984F88DA21F95198002C0B41 /* OnlineFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984F88D921F95198002C0B41 /* OnlineFriendsTableViewController.swift */; };
 		985D732E220A7B3C00449576 /* HabitSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985D732D220A7B3C00449576 /* HabitSections.swift */; };
+		9875CAEC2280F35F00585DC2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9875CAEB2280F35F00585DC2 /* ShareViewController.swift */; };
+		9875CAEF2280F35F00585DC2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9875CAED2280F35F00585DC2 /* MainInterface.storyboard */; };
+		9875CAF32280F35F00585DC2 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9875CAE92280F35F00585DC2 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9875CAF92280F4C200585DC2 /* GetUrl.js in Resources */ = {isa = PBXBuildFile; fileRef = 9875CAF82280F4C200585DC2 /* GetUrl.js */; };
+		9883E40C221233B000D5E96E /* ArchivedHabitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883E40B221233B000D5E96E /* ArchivedHabitTableViewController.swift */; };
+		98CA83AB2295EF5D006E3EF9 /* NewHabitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CA83AA2295EF5D006E3EF9 /* NewHabitTableViewController.swift */; };
+		98CDF9DD2214F06700E1115E /* DailySessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF9DC2214F06700E1115E /* DailySessions.swift */; };
+		98CDF9E12214FBB100E1115E /* DayNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF9E02214FBB100E1115E /* DayNameFormatter.swift */; };
+		98CDF9E322161F8100E1115E /* WeeklySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF9E222161F8100E1115E /* WeeklySession.swift */; };
+		98CDF9E52216264000E1115E /* DailyTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF9E42216264000E1115E /* DailyTimeFormatter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9875CAF12280F35F00585DC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0225796B1FD10797001EC2CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9875CAE82280F35F00585DC2;
+			remoteInfo = ShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9875CAF72280F35F00585DC2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9875CAF32280F35F00585DC2 /* ShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02183FD0210A90F000F3404D /* HabitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +115,17 @@
 		984F88D721F94C55002C0B41 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		984F88D921F95198002C0B41 /* OnlineFriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineFriendsTableViewController.swift; sourceTree = "<group>"; };
 		985D732D220A7B3C00449576 /* HabitSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSections.swift; sourceTree = "<group>"; };
+		9875CAE92280F35F00585DC2 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9875CAEB2280F35F00585DC2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		9875CAEE2280F35F00585DC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		9875CAF02280F35F00585DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9875CAF82280F4C200585DC2 /* GetUrl.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = GetUrl.js; sourceTree = "<group>"; };
+		9883E40B221233B000D5E96E /* ArchivedHabitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedHabitTableViewController.swift; sourceTree = "<group>"; };
+		98CA83AA2295EF5D006E3EF9 /* NewHabitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitTableViewController.swift; sourceTree = "<group>"; };
+		98CDF9DC2214F06700E1115E /* DailySessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySessions.swift; sourceTree = "<group>"; };
+		98CDF9E02214FBB100E1115E /* DayNameFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayNameFormatter.swift; sourceTree = "<group>"; };
+		98CDF9E222161F8100E1115E /* WeeklySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySession.swift; sourceTree = "<group>"; };
+		98CDF9E42216264000E1115E /* DailyTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTimeFormatter.swift; sourceTree = "<group>"; };
 		CEE6A4A4C69C422F173C0E0D /* Pods-Jolt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jolt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jolt/Pods-Jolt.debug.xcconfig"; sourceTree = "<group>"; };
 		DDEE9C83C45703FA928BF363 /* Pods-Jolt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jolt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jolt/Pods-Jolt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +139,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9875CAE62280F35F00585DC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -101,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				022579751FD10797001EC2CD /* Jolt */,
+				9875CAEA2280F35F00585DC2 /* ShareExtension */,
 				022579741FD10797001EC2CD /* Products */,
 				CAA969D473E20FB605161A50 /* Pods */,
 				F3EC5AF6BDE88954D8E3C462 /* Frameworks */,
@@ -111,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				022579731FD10797001EC2CD /* Jolt.app */,
+				9875CAE92280F35F00585DC2 /* ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,6 +230,8 @@
 				024E5E46219DC30F00160A20 /* JoltsTableViewController.swift */,
 				984F88D021F946D3002C0B41 /* ChatViewController.swift */,
 				984F88D921F95198002C0B41 /* OnlineFriendsTableViewController.swift */,
+				9883E40B221233B000D5E96E /* ArchivedHabitTableViewController.swift */,
+				98CA83AA2295EF5D006E3EF9 /* NewHabitTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -215,6 +271,10 @@
 			isa = PBXGroup;
 			children = (
 				02A4A0332069C250008EDAED /* StringFromDate.swift */,
+				98CDF9DC2214F06700E1115E /* DailySessions.swift */,
+				98CDF9E02214FBB100E1115E /* DayNameFormatter.swift */,
+				98CDF9E222161F8100E1115E /* WeeklySession.swift */,
+				98CDF9E42216264000E1115E /* DailyTimeFormatter.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -236,6 +296,17 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9875CAEA2280F35F00585DC2 /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9875CAEB2280F35F00585DC2 /* ShareViewController.swift */,
+				9875CAED2280F35F00585DC2 /* MainInterface.storyboard */,
+				9875CAF02280F35F00585DC2 /* Info.plist */,
+				9875CAF82280F4C200585DC2 /* GetUrl.js */,
+			);
+			path = ShareExtension;
 			sourceTree = "<group>";
 		};
 		CAA969D473E20FB605161A50 /* Pods */ = {
@@ -268,15 +339,34 @@
 				022579711FD10797001EC2CD /* Resources */,
 				8A9B2D3281144710E89746BA /* [CP] Embed Pods Frameworks */,
 				A3594B9E51974F71753C4ABB /* [CP] Copy Pods Resources */,
+				9875CAF72280F35F00585DC2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9875CAF22280F35F00585DC2 /* PBXTargetDependency */,
 			);
 			name = Jolt;
 			productName = Jolt;
 			productReference = 022579731FD10797001EC2CD /* Jolt.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9875CAE82280F35F00585DC2 /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9875CAF62280F35F00585DC2 /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				9875CAE52280F35F00585DC2 /* Sources */,
+				9875CAE62280F35F00585DC2 /* Frameworks */,
+				9875CAE72280F35F00585DC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			productName = ShareExtension;
+			productReference = 9875CAE92280F35F00585DC2 /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -284,7 +374,7 @@
 		0225796B1FD10797001EC2CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Gabriel Ducharme";
 				TargetAttributes = {
@@ -300,6 +390,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					9875CAE82280F35F00585DC2 = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -317,6 +411,7 @@
 			projectRoot = "";
 			targets = (
 				022579721FD10797001EC2CD /* Jolt */,
+				9875CAE82280F35F00585DC2 /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -330,6 +425,15 @@
 				0225797C1FD10797001EC2CD /* Main.storyboard in Resources */,
 				026EBE8B20A680750027123E /* Assets.xcassets in Resources */,
 				024E1CEF2027E3B600858184 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9875CAE72280F35F00585DC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9875CAEF2280F35F00585DC2 /* MainInterface.storyboard in Resources */,
+				9875CAF92280F4C200585DC2 /* GetUrl.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,25 +556,31 @@
 				9828B85E21EE3DF30015845D /* AppDelegate.swift in Sources */,
 				980DF3E42201135F00B0172C /* HabitHeaderTableViewCell.swift in Sources */,
 				02C33E0B2099031C001464F6 /* UIScrollView+EmptyDataSet.m in Sources */,
+				98CDF9E322161F8100E1115E /* WeeklySession.swift in Sources */,
 				0234FDAB21AEE83F002C10D2 /* DashboardHeader.swift in Sources */,
+				98CDF9DD2214F06700E1115E /* DailySessions.swift in Sources */,
 				024A7B472107D07C00E55B8D /* DashboardCollectionViewLayout.swift in Sources */,
 				984F88DA21F95198002C0B41 /* OnlineFriendsTableViewController.swift in Sources */,
 				029D41D02029469700CE5480 /* AuthVC.swift in Sources */,
 				024B058B2107DA8A002088CD /* HabitViewController.swift in Sources */,
+				98CDF9E12214FBB100E1115E /* DayNameFormatter.swift in Sources */,
 				02EAA6192031165900BF0775 /* Session.swift in Sources */,
 				984F88D821F94C55002C0B41 /* Message.swift in Sources */,
 				02B15397206316E000368D9E /* HabitCreationViewController.swift in Sources */,
 				02183FD1210A90F000F3404D /* HabitTableViewController.swift in Sources */,
 				02A3A41621908C2F00FF591E /* SessionTimerViewController.swift in Sources */,
+				98CDF9E52216264000E1115E /* DailyTimeFormatter.swift in Sources */,
 				023EE69B20F664EA008115CB /* DashboardViewController.swift in Sources */,
 				985D732E220A7B3C00449576 /* HabitSections.swift in Sources */,
 				02ED82AC2195DBDC0095191C /* SessionEditViewController.swift in Sources */,
 				02A032B921ADB5210095EEC3 /* Dash02CollectionViewCell.swift in Sources */,
+				98CA83AB2295EF5D006E3EF9 /* NewHabitTableViewController.swift in Sources */,
 				02EAA61D2032805A00BF0775 /* Jolt.swift in Sources */,
 				024E5E47219DC30F00160A20 /* JoltsTableViewController.swift in Sources */,
 				02A4A0342069C250008EDAED /* StringFromDate.swift in Sources */,
 				0279E7D62101443500E8D964 /* Dash01CollectionViewCell.swift in Sources */,
 				026818B42027ED1100FFB2A6 /* UserLoginViewController.swift in Sources */,
+				9883E40C221233B000D5E96E /* ArchivedHabitTableViewController.swift in Sources */,
 				984F88D121F946D3002C0B41 /* ChatViewController.swift in Sources */,
 				02EAA61B20327CC100BF0775 /* Habit.swift in Sources */,
 				0275DF7521933E04004BEE21 /* SessionJoltViewController.swift in Sources */,
@@ -480,7 +590,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9875CAE52280F35F00585DC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9875CAEC2280F35F00585DC2 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9875CAF22280F35F00585DC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9875CAE82280F35F00585DC2 /* ShareExtension */;
+			targetProxy = 9875CAF12280F35F00585DC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0225797A1FD10797001EC2CD /* Main.storyboard */ = {
@@ -497,6 +623,14 @@
 				022579801FD10797001EC2CD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9875CAED2280F35F00585DC2 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9875CAEE2280F35F00585DC2 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -617,6 +751,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CEE6A4A4C69C422F173C0E0D /* Pods-Jolt.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Jolt/Jolt.entitlements;
@@ -637,6 +772,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDEE9C83C45703FA928BF363 /* Pods-Jolt.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Jolt/Jolt.entitlements;
@@ -648,6 +784,43 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Jolt/Support Files/Jolt-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9875CAF42280F35F00585DC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6P98KSK3PB;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Jolt.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9875CAF52280F35F00585DC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6P98KSK3PB;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Jolt.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -669,6 +842,15 @@
 			buildConfigurations = (
 				022579861FD10797001EC2CD /* Debug */,
 				022579871FD10797001EC2CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9875CAF62280F35F00585DC2 /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9875CAF42280F35F00585DC2 /* Debug */,
+				9875CAF52280F35F00585DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

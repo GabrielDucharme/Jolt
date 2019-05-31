@@ -49,7 +49,10 @@ class JoltsTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.joltContent.text = model[indexPath.row].note
-        cell.joltCreatedOnLabel.text = "Created on: \(stringFromDate(model[indexPath.row].createdOn))"
+        
+        let timeStamp = model[indexPath.row].createdOn
+        let date = timeStamp.dateValue()
+        cell.joltCreatedOnLabel.text = "Created on: \(stringFromDate(date))"
         
         // Load image if any
         let gsReference = storage.reference(forURL: "\(model[indexPath.row].joltImage!)")
@@ -70,6 +73,7 @@ class JoltsTableViewController: UITableViewController {
                             print(image.size)
                             cell.joltImageView.image = image
                         } else {
+                            cell.joltImageView.image = nil
                             print("Could not get the image")
                         }
                     }
@@ -116,7 +120,7 @@ class JoltsTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -124,7 +128,7 @@ class JoltsTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
 
